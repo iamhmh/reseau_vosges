@@ -1,4 +1,4 @@
-import { BelongsTo, DataType, Column, Default, ForeignKey, Model, PrimaryKey, Table } from 'sequelize-typescript';
+import { BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from 'sequelize-typescript';
 import { uuid } from 'uuidv4';
 import { User } from './user';
 
@@ -13,10 +13,6 @@ export class PrivateTalk extends Model<PrivateTalk> {
     @PrimaryKey
     @Column
     id?: string = uuid();
-
-    @Default("user_id")
-    @Column(DataType.ENUM("user_id", "Moi-même"))
-    initiated_by?: boolean;
 
     @Column
     meeting_place?: string;
@@ -33,4 +29,11 @@ export class PrivateTalk extends Model<PrivateTalk> {
 
     @BelongsTo(() => User)
     user?: User;
+
+    @ForeignKey(() => User)
+    @Column
+    initiated_by_user_id?: string;
+
+    @BelongsTo(() => User)
+    initiated_by_user?: User;
 }

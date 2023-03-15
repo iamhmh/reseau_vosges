@@ -31,7 +31,7 @@ export class Group extends Model<Group> {
     user_id?: string;
 
     @BelongsTo(() => User)
-    group_creator?: User;
+    creator?: User;
 
     @HasMany(() => User)
     users?: User[];
