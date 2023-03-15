@@ -1,4 +1,4 @@
-import { BelongsTo, Column, DataType, ForeignKey, Model, PrimaryKey, Table } from 'sequelize-typescript';
+import { BelongsTo, HasMany, Column, DataType, ForeignKey, Model, PrimaryKey, Table } from 'sequelize-typescript';
 import { uuid } from 'uuidv4';
 import { User } from './user';
 
@@ -31,5 +31,8 @@ export class Group extends Model<Group> {
     user_id?: string;
 
     @BelongsTo(() => User)
-    user?: User;
+    group_creator?: User;
+
+    @HasMany(() => User)
+    users?: User[];
 }

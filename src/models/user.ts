@@ -1,4 +1,4 @@
-import { HasMany, Column, DataType, Default, Model, PrimaryKey, Table, HasOne } from 'sequelize-typescript';
+import { HasMany, Column, DataType, Default, Model, PrimaryKey, Table, HasOne, BelongsTo, ForeignKey } from 'sequelize-typescript';
 import { uuid } from 'uuidv4';
 import { AbsenceManagement } from './absence_management';
 import { Conference } from './conference';
@@ -81,6 +81,9 @@ export class User extends Model<User> {
 
     @HasOne(() => Group)
     group?: Group;
+
+    @BelongsTo(() => Group)
+    group_id?: string;
 
     @HasMany(() => Mpb)
     mpb?: Mpb[];
