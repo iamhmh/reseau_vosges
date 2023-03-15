@@ -1,7 +1,9 @@
 import express from 'express';
 import { sequelize } from './sequelize';
+import { indexRouter } from "./routes";
 import morgan from "morgan";
 import cors from "cors";
+import { errorMiddleware } from "./shared/middlewares";
 
 const app = express();
 
@@ -16,9 +18,8 @@ app.use(function (req, res, next)
     next();
 });
 
-app.get('/', (req, res, next) => {
-    res.json('Hello world')
-})
+app.use("/test1", indexRouter);
+app.use(errorMiddleware);
 
 sequelize.sync({ alter: true }).then(async () => {});
 
