@@ -5,7 +5,7 @@
           <ion-grid>
             <ion-row>
               <ion-card-title>PROCHAINE RÉUNION</ion-card-title>
-              <ion-button fill="clear" id="open-modal">
+              <ion-button fill="clear" @click="openModal()">
                 <ion-icon aria-hidden="true" :icon="eyeOutline" />
               </ion-button>
             </ion-row>
@@ -21,12 +21,12 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-modal ref="modal" trigger="open-modal" >
+    <ion-modal :is-open="isModalOpen" ref="modal" trigger="open-modal" >
       <ion-header>
         <ion-toolbar>
           <ion-title style="font-size: 0.9em;">RÉSUMÉ DE LA RÉUNION</ion-title>
           <ion-buttons slot="end">
-            <ion-button @click="cancel()">
+            <ion-button @click="closeModal()">
               <ion-icon aria-hidden="true" :icon="closeOutline" style="color: red;"/>
             </ion-button>
           </ion-buttons>
@@ -58,21 +58,44 @@
                 <ion-card-title>MES BONS</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-                <ion-button fill="clear">
-                    <ion-icon slot="start" :icon="peopleCircleOutline"></ion-icon>
-                    Merci pour le business
+              <ion-grid>
+            <ion-row>
+              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
+                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
+                    <ion-icon slot="start" :icon="peopleCircleOutline" ></ion-icon> Merci pour le business
+                </a>
+              </ion-col>
+              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
+                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
                     0+
-                </ion-button>
-                <ion-button fill="clear">
-                    <ion-icon slot="start" :icon="peopleCircleOutline"></ion-icon>
-                    Recommandations
+                </a>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
+                <a href="" style="text-decoration: none; color: black;"><ion-icon slot="start" :icon="peopleCircleOutline"></ion-icon> Recommandations</a>
+              </ion-col>
+              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
+                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
                     0+
-                </ion-button>
-                <ion-button fill="clear">
-                    <ion-icon slot="start" :icon="chatbubbleEllipsesOutline"></ion-icon>
-                    Tête-à-tête
+                </a>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
+                <a href="" style="text-decoration: none; color: black;"><ion-icon slot="start" :icon="chatbubbleEllipsesOutline"></ion-icon> Tête-à-tête</a>
+              </ion-col>
+              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
+                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
                     0+
-                </ion-button>
+                </a>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
             </ion-card-content>
           </ion-card>
           
@@ -92,44 +115,36 @@
           </ion-card>
       </ion-content>
     </ion-modal>
+
   </div>
 </template>
 
-<script lang="ts">
-import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonAvatar, IonItem, IonLabel } from '@ionic/vue';
-import { eyeOutline, closeOutline, handLeftOutline} from 'ionicons/icons';
-import { OverlayEventDetail } from '@ionic/core/components';
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+import { IonGrid, IonRow, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonAvatar, IonItem, IonLabel, IonCol } from '@ionic/vue';
+import { eyeOutline, closeOutline, handLeftOutline, peopleCircleOutline, chatbubbleEllipsesOutline} from 'ionicons/icons';
+import {reactive, ref} from 'vue';
 
-export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonIcon, IonAvatar, IonItem, IonLabel,
-    },
-    data() {
-      return {
-        eyeOutline: eyeOutline,
-        closeOutline: closeOutline,
-        handLeftOutline: handLeftOutline,
-      };
-    },
-    methods: {
-      cancel() {
-        this.$refs.modal.$el.dismiss(null, 'cancel');
-      },
+const isModalOpen = ref(false)
 
-      
-    },
-  });
+const openModal = () => {
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
 </script>
 
 <style scoped>
+ion-card-header{
+  padding: 5px 5px 0 5px;
+  align-items: center;
+}
+ion-card-header ion-grid ion-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #mpbtotal {
   width: 90%;
   border-radius: 10px;

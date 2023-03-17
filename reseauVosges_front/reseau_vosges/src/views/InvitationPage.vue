@@ -3,6 +3,11 @@
       <ion-content :fullscreen="true">
         <ion-header collapse="condense">
           <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button>
+                <a href="/tabs/tab1"><ion-icon aria-hidden="true" :icon="chevronBackOutline" style="color: red;"/></a>
+              </ion-button>
+            </ion-buttons>
             <ion-title>INVITÉS</ion-title>
           </ion-toolbar>
         </ion-header>
@@ -14,7 +19,8 @@
   </template>
   
   <script setup lang="ts">
-  import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+  import { IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+  import { chevronBackOutline } from 'ionicons/icons';
   import InviterGroupe from '@/components/InviterGroupe.vue';
   </script>
   

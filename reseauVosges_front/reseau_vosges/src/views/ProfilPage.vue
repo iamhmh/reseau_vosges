@@ -1,0 +1,41 @@
+<template>
+    <ion-page>
+      <ion-content :fullscreen="true">
+        <ion-header collapse="condense">
+          <ion-toolbar>
+            <ion-title>ACCUEIL</ion-title>
+          </ion-toolbar>
+          <FicheUser/>
+        </ion-header>
+  
+       
+      </ion-content>
+    </ion-page>
+  </template>
+  
+  <script setup lang="ts">
+  import { IonPage, IonContent, IonHeader, IonToolbar, IonTitle} from '@ionic/vue';
+  import FicheUser from '@/components/FicheUser.vue';
+  
+  </script>
+  
+  <style>
+  .header-collapse-condense ion-toolbar {
+    --background: #f4f4f4;
+  }
+  
+  ion-header {
+      background: #f4f4f4;
+      position: fixed;
+      border-bottom: 1px solid #e5e5e5;
+  }
+  ion-title {
+    text-align: center;
+    color: #3a3a3a;
+  }
+  ion-button {
+    text-align: center;
+    color: #3a3a3a;
+    font-size: 1em;
+  }
+  </style>

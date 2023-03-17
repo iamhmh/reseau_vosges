@@ -5,7 +5,7 @@ import TabsPage from '../views/TabsPage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/home'
   },
   {
     path: '/tabs/',
@@ -13,27 +13,31 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/tabs/home'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: 'home',
+        component: () => import('@/views/AccueilPage.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: 'actualite',
+        component: () => import('@/views/FilActualitePage.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: 'rechercher',
+        component: () => import('@/views/RechercherPage.vue')
       },
       {
-        path: 'tab4',
-        component: () => import('@/views/Tab4Page.vue')
+        path: 'invitation',
+        component: () => import('@/views/InvitationPage.vue')
       },
       {
         path: 'addmpb',
         component: () => import('@/views/EnregistrerUnMPB.vue')
+      },
+      {
+        path: 'userprofile',
+        component: () => import('@/views/ProfilPage.vue')
       },
     ]
   },

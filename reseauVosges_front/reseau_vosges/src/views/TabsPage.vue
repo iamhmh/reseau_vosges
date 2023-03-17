@@ -3,37 +3,38 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
+        <ion-tab-button tab="tab1" href="/tabs/home">
           <ion-icon aria-hidden="true" :icon="home" />
           <ion-label>Accueil</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-tab-button tab="actualite" href="/tabs/actualite">
           <ion-icon aria-hidden="true" :icon="readerOutline" />
           <ion-label>Bons</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
+        <ion-tab-button tab="rechercher" href="/tabs/rechercher">
           <ion-icon aria-hidden="true" :icon="searchOutline" />
           <ion-label>Rechercher</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab4" href="/tabs/tab4">
+        <ion-tab-button tab="invitation" href="/tabs/invitation">
           <ion-icon aria-hidden="true" :icon="mailOpenOutline" />
           <ion-label>Invités</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button id="plus-modal">
+        <ion-tab-button @click="openModal()">
           <ion-icon aria-hidden="true" :icon="menuOutline" size="large" />
           <ion-label>Plus</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
-      <ion-modal ref="modal" trigger="plus-modal" id="modalMenu">
+
+      <ion-modal :is-open="isModalOpen" ref="modal" trigger="plus-modal" id="modalMenu">
       <ion-header>
         <ion-toolbar id="modalToolbar">
             <ion-img style="margin-left: auto; margin-right: auto;" src="" alt=""></ion-img>
           <ion-buttons slot="end">
-            <ion-button @click="cancel($event)">
+            <ion-button @click="closeModal()">
               <ion-icon aria-hidden="true" :icon="closeOutline" style="color: white;"/>
             </ion-button>
           </ion-buttons>
@@ -91,49 +92,20 @@
 
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonModal, IonImg, IonHeader, IonToolbar, IonButtons, IonButton, IonContent, IonList, IonItem } from '@ionic/vue';
 import { readerOutline, searchOutline, home, menuOutline, mailOpenOutline, closeOutline } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+import {reactive, ref} from 'vue';
 
-export default defineComponent({
-    components: {
-      IonIcon, 
-      IonLabel,
-      IonTabBar, 
-      IonTabButton, 
-      IonTabs, 
-      IonPage, 
-      IonRouterOutlet, 
-      IonModal,
-      IonImg,
-      IonHeader, 
-      IonToolbar,
-      IonButtons,
-      IonButton,
-      IonContent,
-      IonList,
-      IonItem,
-    },
-    data() {
-      return {
-        closeOutline: closeOutline,
-        readerOutline: readerOutline,
-        searchOutline: searchOutline, 
-        home: home, 
-        menuOutline: menuOutline, 
-        mailOpenOutline: mailOpenOutline,
-      };
-    },
-    methods: {
-      cancel(event: any) {
-        //console.log(event,this)
-        //console.log(this.$refs.modal)
-        //event.$refs.modal.dismiss(null, 'cancel');
-       this.$refs.modal.$el.dismiss(null, 'cancel');
-      },
-    },
-  });
+const isModalOpen = ref(false)
+
+const openModal = () => {
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
 </script>
 
 <style>

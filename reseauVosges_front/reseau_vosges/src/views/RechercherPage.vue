@@ -3,7 +3,12 @@
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title style="font-size: 0.75em;">RECHERCHER DANS MON GROUPE</ion-title>
+          <ion-buttons slot="start">
+              <ion-button>
+                <a href="/tabs/home"><ion-icon aria-hidden="true" :icon="chevronBackOutline" style="color: red;"/></a>
+              </ion-button>
+            </ion-buttons>
+          <ion-title>RECHERCHER</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -33,12 +38,12 @@
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonList, IonSearchbar } from '@ionic/vue';
-import { chevronForwardOutline } from 'ionicons/icons';
+import { IonLabel, IonIcon, IonAvatar, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonList, IonSearchbar } from '@ionic/vue';
+import { chevronForwardOutline, chevronBackOutline } from 'ionicons/icons';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonList, IonSearchbar },
+    components: { IonLabel, IonIcon, IonAvatar, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonList, IonSearchbar },
     setup() {
       const data = ['Alicia BERTHELOT', 'Aurélien MILLOTTE', 'Axelle MAITHEREU', 'Cyril GALMICHE', 'Daniel FERREIRA', 'Elisa GORNET', 'Francis THIERY', 'Giovanni ZINNI', 'Jean-Noel MORIZOT', 'Julie XOLIN', 'Laurent BONNET', 'Lionel BONNET', 'djbjbfjbhdjb'];
       const results = ref(data);
@@ -48,6 +53,7 @@ export default defineComponent({
     data() {
     return {
       chevronForwardOutline: chevronForwardOutline,
+      chevronBackOutline: chevronBackOutline,
     };
   },
     methods: {

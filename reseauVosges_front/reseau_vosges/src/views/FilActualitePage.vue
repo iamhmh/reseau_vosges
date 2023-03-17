@@ -1,30 +1,115 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
+      <ion-header collapse="condense" style="position: sticky;">
         <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button>
+                <a href="/tabs/home"><ion-icon aria-hidden="true" :icon="chevronBackOutline" style="color: red;"/></a>
+              </ion-button>
+            </ion-buttons>
           <ion-title>FIL D'ACTUALITÉS</ion-title>
         </ion-toolbar>
         <ion-grid style="padding: 0;">
-        <ion-row>
-          <ion-col size="5" size-sm="3" style="padding: 0; border: 1px solid black">
-            <ion-button expand="full">DONNÉS</ion-button>
-          </ion-col>
-          <ion-col size="5" size-sm="3" style="padding: 0; border: 1px solid black">
-            <ion-button expand="full">RECUS</ion-button>
-          </ion-col>
-          <ion-col size="2" size-sm="3" style="padding: 0; border: 1px solid black">
-            <ion-button expand="full">
-              <ion-icon slot="start" :icon="optionsOutline"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+          <ion-row>
+            <ion-segment value="custom">
+              <ion-segment-button value="donnes">
+                <ion-label>DONNÉS</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="recus">
+                <ion-label>RECUS</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="options">
+                <ion-label><ion-icon slot="start" :icon="optionsOutline"></ion-icon></ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-row>
+        </ion-grid>
       </ion-header>
 
       
 
-      <ion-item style="margin-top: 20px; padding: 0;">
+      <ion-item style="padding: 0;">
+            <ion-grid>
+                <ion-row>
+                  <ion-col size="2" size-sm="3" style="display: flex; justify-content: center;">
+                    <ion-icon aria-hidden="true" :icon="handLeftOutline" />
+                  </ion-col>
+                  <ion-col size="8" size-sm="3" style="font-size: 0.9em;">
+                    Mars 16 2023
+                    <br>
+                    <a href="" target="_blank" style="color: red;">Aurélien MILLOTTE - €960</a>
+                  </ion-col>
+                  <ion-col size="2" size-sm="3">
+                    <ion-button fill="clear" id="open-modal">
+                      <ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+      </ion-item>
+
+      <ion-item>
+            <ion-grid>
+                <ion-row>
+                  <ion-col size="2" size-sm="3" style="display: flex; justify-content: center;">
+                    <ion-icon aria-hidden="true" :icon="handLeftOutline" />
+                  </ion-col>
+                  <ion-col size="8" size-sm="3" style="font-size: 0.9em;">
+                    Mars 16 2023
+                    <br>
+                    <a href="" target="_blank" style="color: red;">Aurélien MILLOTTE - €960</a>
+                  </ion-col>
+                  <ion-col size="2" size-sm="3">
+                    <ion-button fill="clear" id="open-modal">
+                      <ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+      </ion-item>
+
+      <ion-item>
+            <ion-grid>
+                <ion-row>
+                  <ion-col size="2" size-sm="3" style="display: flex; justify-content: center;">
+                    <ion-icon aria-hidden="true" :icon="handLeftOutline" />
+                  </ion-col>
+                  <ion-col size="8" size-sm="3" style="font-size: 0.9em;">
+                    Mars 16 2023
+                    <br>
+                    <a href="" target="_blank" style="color: red;">Aurélien MILLOTTE - €960</a>
+                  </ion-col>
+                  <ion-col size="2" size-sm="3">
+                    <ion-button fill="clear" id="open-modal">
+                      <ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+      </ion-item>
+
+      <ion-item>
+            <ion-grid>
+                <ion-row>
+                  <ion-col size="2" size-sm="3" style="display: flex; justify-content: center;">
+                    <ion-icon aria-hidden="true" :icon="handLeftOutline" />
+                  </ion-col>
+                  <ion-col size="8" size-sm="3" style="font-size: 0.9em;">
+                    Mars 16 2023
+                    <br>
+                    <a href="" target="_blank" style="color: red;">Aurélien MILLOTTE - €960</a>
+                  </ion-col>
+                  <ion-col size="2" size-sm="3">
+                    <ion-button fill="clear" id="open-modal">
+                      <ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+      </ion-item>
+
+      <ion-item>
             <ion-grid>
                 <ion-row>
                   <ion-col size="2" size-sm="3" style="display: flex; justify-content: center;">
@@ -256,16 +341,34 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList,  IonIcon, } from '@ionic/vue';
-import { optionsOutline, handLeftOutline, chevronForwardOutline, addOutline, colorPalette, globe } from 'ionicons/icons';
+import { IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList, IonIcon,  } from '@ionic/vue';
+import { chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline, addOutline, colorPalette, globe } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 defineComponent({
-    components: { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList,  IonIcon  },
+    components: { IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList,  IonIcon  },
   });
 </script>
 
 <style>
+ion-segment-button {
+    --indicator-color: red;
+  }
+ion-segment-button.md {
+  --color: #000;
+  --color-checked: red;
+  --indicator-height: 4px;
+}
+ion-segment-button.ios {
+  --color: red;
+  --color-checked: #fff;
+  --border-radius: 20px;
+}
+ion-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 .header-collapse-condense ion-toolbar {
   --background: #f6f4f4;
 }
