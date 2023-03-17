@@ -26,8 +26,20 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab3',
         component: () => import('@/views/Tab3Page.vue')
-      }
+      },
+      {
+        path: 'tab4',
+        component: () => import('@/views/Tab4Page.vue')
+      },
+      {
+        path: 'addmpb',
+        component: () => import('@/views/EnregistrerUnMPB.vue')
+      },
     ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/ConnexionPage.vue')
   }
 ]
 
