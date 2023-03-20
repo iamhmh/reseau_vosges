@@ -32,7 +32,6 @@
       <ion-modal :is-open="isModalOpen" ref="modal" trigger="plus-modal" id="modalMenu">
       <ion-header>
         <ion-toolbar id="modalToolbar">
-            <ion-img style="margin-left: auto; margin-right: auto;" src="" alt=""></ion-img>
           <ion-buttons slot="end">
             <ion-button @click="closeModal()">
               <ion-icon aria-hidden="true" :icon="closeOutline" style="color: white;"/>
@@ -41,12 +40,12 @@
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding" id="modalContent">
-        <ion-list style="margin-top: 100px;" lines="none">
+        <ion-list lines="none" style="margin-top: 100px;">
           <ion-item id="modalItem">
             <ion-label id="modalLabel"><a href="#" id="modalLabelA">BNI Business Builder</a></ion-label>
           </ion-item>
           <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Profil</a></ion-label>
+            <ion-label id="modalLabel"><a href="/tabs/userprofile" id="modalLabelA">Profil</a></ion-label>
           </ion-item>
           <ion-item id="modalItem">
             <ion-label id="modalLabel"><a href="#" id="modalLabelA">Résumé de la réunion</a></ion-label>
@@ -88,8 +87,6 @@
     
   
   </ion-page>
-
-
 </template>
 
 <script lang="ts" setup>

@@ -5,7 +5,7 @@
                 <ion-toolbar>
                     <ion-buttons slot="start">
                         <ion-button>
-                            <a href="/tabs/tab1"><ion-icon aria-hidden="true" :icon="chevronBackOutline" style="color: red;"/></a>
+                            <a href="/tabs/home"><ion-icon aria-hidden="true" :icon="chevronBackOutline" style="color: red;"/></a>
                         </ion-button>
                     </ion-buttons>
                     <ion-title>ENREGISTRER UN MPB</ion-title>
