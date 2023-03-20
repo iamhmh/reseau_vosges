@@ -32,6 +32,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/InvitationPage.vue')
       },
       {
+        path: 'profilmembre',
+        component: () => import('@/views/ProfilMembrePage.vue')
+      },
+      {
         path: 'bonmpb',
         component: () => import('@/views/bons/BonMPBPage.vue')
       },

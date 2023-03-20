@@ -25,8 +25,8 @@
             <br>
             <p>Poste</p>
           </ion-label>
-          <ion-button fill="clear" id="open-modal">
-            <ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/>
+          <ion-button fill="clear">
+            <a href="/tabs/profilmembre"><ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/></a>
           </ion-button>
         </ion-item>
       </ion-list>

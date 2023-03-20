@@ -42,44 +42,42 @@
                 </ion-grid>
             </ion-item>
 
-            <p id="textMPB">Pour une recommandations d'un montant de : </p>
-            <ion-card color="dark" style="margin-top: 10px;">
-                <ion-card-header>
-                    <ion-card-title style="vertical-align: middle;">
-                        <ion-icon aria-hidden="true" :icon="logoEuro" style="color: white; margin-right: 10px;"/>
-                        960
-                    </ion-card-title>
-                </ion-card-header>
-            </ion-card>
-
             <ion-grid>
                 <ion-row>
                     <ion-col size="6" size-sm="6">
-                        <p id="textMPBCard">Type de business : </p>
-                        <h6 style="margin-left: 3px;"><strong>Nouveau</strong></h6>
+                        <p id="textMPBCard">Initié par : </p>
+                        <h6 style="margin-left: 3px;"><strong>Aurélien MILLOTTE</strong></h6>
                     </ion-col>
                     <ion-col size="6" size-sm="6">
-                        <p id="textMPBCard">Type de recommandation : </p>
-                        <h6><strong>Externe</strong></h6>
+                        <p id="textMPBCard">Date : </p>
+                        <h6><strong>02 Novembre 2022</strong></h6>
+                    </ion-col>
+                </ion-row>
+                <ion-row style="margin-top: 10px;">
+                    <ion-col size="12" size-sm="6">
+                        <p id="textMPBCard">Lieu : </p>
+                        <h6 style="margin-left: 3px;"><strong>Bureau</strong></h6>
+                    </ion-col>
+                </ion-row>
+                <ion-row style="margin-top: 10px;">
+                    <ion-col size="12" size-sm="6">
+                        <p id="textMPBCard">Sujet de conversation : </p>
+                        <h6 style="margin-left: 3px;"><strong>Sujet commun transverse</strong></h6>
                     </ion-col>
                 </ion-row>
             </ion-grid>
-
-            <p id="textMPB">Commentaires : </p>
-            <p style="margin-left: 15px;">John Balland site vitrine et rédaction</p>
-            
 
             </ion-content>
         </ion-content>
     </ion-page>
 </template>
 <script lang="ts">
-import { IonAvatar, IonCard, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon, IonButtons, IonItem, IonGrid, IonRow, IonCol } from '@ionic/vue';
+import { IonAvatar, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon, IonButtons, IonItem, IonGrid, IonRow, IonCol } from '@ionic/vue';
 import { logoEuro, chevronBackOutline, handLeftOutline } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-    components: { IonAvatar, IonCard, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon, IonButtons, IonItem, IonGrid, IonRow, IonCol },
+    components: { IonAvatar, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon, IonButtons, IonItem, IonGrid, IonRow, IonCol },
     
 
     data() {

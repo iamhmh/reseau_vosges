@@ -4,20 +4,45 @@
         <ion-card-header>
           <ion-grid>
             <ion-row>
-              <ion-card-title>PROCHAINE RÉUNION</ion-card-title>
-              <ion-button fill="clear" @click="openModal()">
-                <ion-icon aria-hidden="true" :icon="eyeOutline" />
-              </ion-button>
+              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-end;">
+                <ion-card-title>PROCHAINE RÉUNION</ion-card-title>
+              </ion-col>
+              <ion-col size="4" size-sm="3" style="display: flex; justify-content: flex-end;">
+                <ion-button fill="clear" @click="openModal()" >
+                  <ion-icon aria-hidden="true" :icon="eyeOutline" />
+                </ion-button>
+              </ion-col>
             </ion-row>
           </ion-grid>
         </ion-card-header>
-        <ion-card-subtitle>Jeudi, Mars 16, 2023</ion-card-subtitle>
-        <ion-card-content>
-          Réunion: <strong>En Personne</strong>
-          <br>
-          MPB: <strong>€22.25k</strong>
-          <br>
-          CONFERENCIERS: <strong>1</strong> VISITEURS: <strong>3</strong>
+        <ion-card-subtitle style="margin-top: 0px;">Jeudi, Mars 16, 2023</ion-card-subtitle>
+        <ion-card-content style="padding-top: 5px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-sm="3">
+                Réunion: <strong>En Personne</strong>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="3" size-sm="3" style="display: flex; justify-content: flex-start;">
+                MPB: 
+              </ion-col>
+              <ion-col size="3" size-sm="3" style="display: flex; justify-content: flex-start;">
+                <strong>€22.25k</strong>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="3" size-sm="3">
+              CONFERENCIERS:
+              </ion-col>
+              <ion-col size="3" size-sm="3">
+              <strong>1</strong>
+              </ion-col>
+              <ion-col size="6" size-sm="3">
+                VISITEURS: <strong>3</strong>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
       </ion-card-content>
     </ion-card>
 

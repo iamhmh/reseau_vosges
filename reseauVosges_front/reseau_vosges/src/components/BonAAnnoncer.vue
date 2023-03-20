@@ -1,13 +1,17 @@
 <template>
   <div id="container">
     <ion-card>
-      <ion-card-header>
+        <ion-card-header>
           <ion-grid>
             <ion-row>
-              <ion-card-title>BONS A ANNONCER</ion-card-title>
-              <ion-button fill="clear" @click="openModal()">
+              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-end;">
+                <ion-card-title>BONS A ANNONCER</ion-card-title>
+              </ion-col>
+              <ion-col size="4" size-sm="3" style="display: flex; justify-content: flex-end;">
+                <ion-button fill="clear" @click="openModal()">
                 <ion-icon aria-hidden="true" :icon="eyeOutline" />
               </ion-button>
+              </ion-col>
             </ion-row>
           </ion-grid>
         </ion-card-header>
@@ -78,11 +82,11 @@
                   <ion-col size="8" size-sm="3" style="font-size: 0.9em;">
                     Mars 16 2023
                     <br>
-                    <a href="" target="_blank" style="color: red;">Aurélien MILLOTTE - €960</a>
+                    <a href="/tabs/bonmpb" style="color: red;">Aurélien MILLOTTE - €960</a>
                   </ion-col>
                   <ion-col size="2" size-sm="3">
-                    <ion-button fill="clear" id="open-modal">
-                      <ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/>
+                    <ion-button fill="clear">
+                      <a href="/tabs/bonmpb"><ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/></a>
                     </ion-button>
                   </ion-col>
                 </ion-row>

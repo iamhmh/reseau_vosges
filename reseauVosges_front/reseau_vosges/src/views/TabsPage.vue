@@ -37,6 +37,13 @@
               <ion-icon aria-hidden="true" :icon="closeOutline" style="color: white;"/>
             </ion-button>
           </ion-buttons>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" style="display: flex; justify-content: center; color: white; margin-left: 22px;">
+                <h4><strong>RESEAU<br>VOSGES</strong></h4>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding" id="modalContent">
