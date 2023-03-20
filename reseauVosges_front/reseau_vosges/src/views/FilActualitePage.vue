@@ -19,15 +19,30 @@
               <ion-segment-button value="recus">
                 <ion-label>RECUS</ion-label>
               </ion-segment-button>
-              <ion-segment-button value="options">
+              <ion-segment-button value="options" id="open-custom-dialog">
                 <ion-label><ion-icon slot="start" :icon="optionsOutline"></ion-icon></ion-label>
               </ion-segment-button>
             </ion-segment>
           </ion-row>
         </ion-grid>
       </ion-header>
-
-      
+    
+    <ion-modal id="example-modal" ref="modal" trigger="open-custom-dialog">
+        <ion-list lines="none">
+          <ion-item :button="true" :detail="false" @click="dismiss()">
+            <ion-icon :icon="personCircle"></ion-icon>
+            <ion-label>MPB</ion-label>
+          </ion-item>
+          <ion-item :button="true" :detail="false" @click="dismiss()">
+            <ion-icon :icon="personCircle"></ion-icon>
+            <ion-label>Recommandations</ion-label>
+          </ion-item>
+          <ion-item :button="true" :detail="false" @click="dismiss()">
+            <ion-icon :icon="personCircle"></ion-icon>
+            <ion-label>Tête-à-tête</ion-label>
+          </ion-item>
+        </ion-list>
+    </ion-modal>
 
       <ion-item style="padding: 0;">
             <ion-grid>
@@ -331,7 +346,7 @@
         </ion-fab-list>
         <ion-fab-list side="end">
           <ion-fab-button style="--background: red;--background-activated: red;--background-hover: red;">
-            <a href="#" style="color: white; font-size: 0.7em; font-weight: bold; text-decoration: none;">
+            <a href="/tabs/addfacetoface" style="color: white; font-size: 0.7em; font-weight: bold; text-decoration: none;">
             <ion-icon :icon="addOutline" style="color: white;"></ion-icon>
             <ion-icon :icon="globe" style="color: white;"></ion-icon>
             Tête-à-tête</a>
@@ -344,12 +359,20 @@
 </template>
 
 <script setup lang="ts">
-import { IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList, IonIcon,  } from '@ionic/vue';
-import { chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline, addOutline, colorPalette, globe } from 'ionicons/icons';
+import { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList, IonIcon,  } from '@ionic/vue';
+import { personCircle, chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline, addOutline, colorPalette, globe } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 defineComponent({
-    components: { IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList,  IonIcon  },
+    components: { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList,  IonIcon  },
+    methods: {
+      dismiss() {
+        this.$refs.modal.$el.dismiss();
+      },
+    },
+    setup() {
+      return { personCircle };
+    }
   });
 </script>
 
@@ -390,5 +413,34 @@ ion-button {
 ion-fab-list ion-fab-button {
   width: 60px;
   height: 60px;
+}
+
+ion-modal#example-modal {
+    --min-width: 250px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+
+ion-modal#example-modal ion-item {
+    --background: red;
+    --color: #ffffff;
+    --padding-start: 0;
+    --padding-end: 0;
+} 
+  
+ion-modal#example-modal ion-icon {
+    margin-right: 6px;
+  
+    width: 48px;
+    height: 48px;
+  
+    padding: 4px 0;
+  
+    color: #ffffff;
+}
+  
+ion-modal#example-modal .wrapper {
+    margin-bottom: 10px;
 }
 </style>

@@ -32,12 +32,28 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/InvitationPage.vue')
       },
       {
+        path: 'bonmpb',
+        component: () => import('@/views/bons/BonMPBPage.vue')
+      },
+      {
+        path: 'bonreco',
+        component: () => import('@/views/bons/BonRecoPage.vue')
+      },
+      {
+        path: 'bonfacetoface',
+        component: () => import('@/views/bons/BonTeteATetePage.vue')
+      },
+      {
         path: 'addmpb',
         component: () => import('@/views/tools/EnregistrerUnMPB.vue')
       },
       {
         path: 'addrecommendation',
         component: () => import('@/views/tools/BonDeRecommandation.vue')
+      },
+      {
+        path: 'addfacetoface',
+        component: () => import('@/views/tools/TeteATete.vue')
       },
       {
         path: 'userprofile',
