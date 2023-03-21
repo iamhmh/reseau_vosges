@@ -28,8 +28,8 @@
             <ion-col style="display: flex; justify-content: flex-start;">
               <ion-list>
                 <ion-item>
-                  <ion-label>Téléphone</ion-label>
-                  <ion-input></ion-input>
+                  <ion-label position="floating">Téléphone</ion-label>
+                  <ion-input placeholder="Entrez votre téléphone ici"></ion-input>
                 </ion-item>
               </ion-list>
             </ion-col>
@@ -38,8 +38,8 @@
             <ion-col style="display: flex; justify-content: flex-start;">
               <ion-list>
                 <ion-item>
-                  <ion-label>Email</ion-label>
-                  <ion-input type="email"></ion-input>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input placeholder="Entrez votre email ici"></ion-input>
                 </ion-item>
               </ion-list>
             </ion-col>
@@ -48,8 +48,8 @@
             <ion-col style="display: flex; justify-content: flex-start;">
               <ion-list>
                 <ion-item>
-                  <ion-label>Numéro de mobile</ion-label>
-                  <ion-input></ion-input>
+                  <ion-label position="floating">Numéro de mobile</ion-label>
+                  <ion-input placeholder="Entrez votre numéro de mobile ici"></ion-input>
                 </ion-item>
               </ion-list>
             </ion-col>
@@ -57,7 +57,7 @@
         </ion-grid>
 
 
-        <ion-grid style="margin-top: 300px;">
+        <ion-grid style="margin-top: 230px;">
           <ion-row>
             <ion-col>
               <ion-button expand="full" id="boutonSuivant" href="/tabs/invitation/invitation2">

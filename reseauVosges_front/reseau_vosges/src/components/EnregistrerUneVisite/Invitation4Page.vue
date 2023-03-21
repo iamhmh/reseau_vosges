@@ -17,14 +17,93 @@
             <img :src="Step4" alt="mon SVG"/>
           </ion-row>
         </ion-grid>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col style="display: flex; justify-content: center;">
+              <h6><strong>Détails de la personne</strong></h6>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="display: flex; justify-content: flex-start;">
+              <ion-list>
+                <ion-item>
+                  <ion-select interface="popover" placeholder="France">
+                    <IonSelectOption value="France">France</IonSelectOption>
+                    <IonSelectOption value="-">-</IonSelectOption>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="display: flex; justify-content: flex-start;">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating">Adress ligne 1</ion-label>
+                  <ion-input placeholder="Entrez votre adresse ici"></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="display: flex; justify-content: flex-start;">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating">Adress ligne 2</ion-label>
+                  <ion-input placeholder="Entrez votre adresse ici"></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="display: flex; justify-content: flex-start;">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating">Ville</ion-label>
+                  <ion-input placeholder="Entrez votre ville ici"></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="display: flex; justify-content: flex-start;">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="floating">Code Postal</ion-label>
+                  <ion-input placeholder="Entrez votre code postal ici"></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-grid style="margin-top: 100px;">
+          <ion-row>
+            <ion-col>
+              <ion-button expand="full" id="boutonSuivant" href="/tabs/invitation/invitation3">
+                <strong>Retour</strong>
+                <ion-icon slot="start" :icon="chevronBackOutline"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="full" id="boutonSuivant" href="/tabs/invitation/invitation5">
+                <strong>Suivant</strong>
+                <ion-icon slot="end" :icon="chevronForwardOutline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
       </ion-content>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts" setup>
-import { IonGrid, IonRow, IonIcon, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
-import { chevronBackOutline } from 'ionicons/icons';
+import { IonInput, IonLabel, IonList, IonItem, IonSelect, IonSelectOption, IonCol, IonGrid, IonRow, IonIcon, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
+import { chevronBackOutline, chevronForwardOutline } from 'ionicons/icons';
 import Step4 from '../../assets/Step4.svg';
 
 </script>
@@ -40,4 +119,18 @@ ion-title {
 .header-collapse-condense ion-toolbar:first-of-type {
     padding-top: 0px;
 }
+
+ion-button#boutonSuivant {
+    --background: red;
+    --background-hover: red;
+    --background-activated: red;
+    --background-focused: red;
+
+    --color: white;
+
+    --box-shadow: 3px 5px 6px 0 rgb(0, 0, 0, 0.5);
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
 </style>

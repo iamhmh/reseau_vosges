@@ -44,8 +44,8 @@
             <ion-col style="display: flex; justify-content: flex-start;">
               <ion-list>
                 <ion-item>
-                  <ion-label>Prénom</ion-label>
-                  <ion-input></ion-input>
+                  <ion-label position="floating">Prénom</ion-label>
+                  <ion-input placeholder="Entrez votre prénom ici"></ion-input>
                 </ion-item>
               </ion-list>
             </ion-col>
@@ -54,8 +54,8 @@
             <ion-col style="display: flex; justify-content: flex-start;">
               <ion-list>
                 <ion-item>
-                  <ion-label>Nom</ion-label>
-                  <ion-input></ion-input>
+                  <ion-label position="floating">Nom</ion-label>
+                  <ion-input placeholder="Entrez votre nom ici"></ion-input>
                 </ion-item>
               </ion-list>
             </ion-col>
@@ -64,8 +64,8 @@
             <ion-col style="display: flex; justify-content: flex-start;">
               <ion-list>
                 <ion-item>
-                  <ion-label>Société</ion-label>
-                  <ion-input></ion-input>
+                  <ion-label position="floating">Société</ion-label>
+                  <ion-input placeholder="Entrez votre société ici"></ion-input>
                 </ion-item>
               </ion-list>
             </ion-col>
@@ -73,7 +73,7 @@
         </ion-grid>
 
 
-        <ion-grid style="margin-top: 250px;">
+        <ion-grid style="margin-top: 175px;">
           <ion-row>
             <ion-col></ion-col>
             <ion-col>

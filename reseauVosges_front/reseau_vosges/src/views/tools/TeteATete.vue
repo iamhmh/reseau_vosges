@@ -130,21 +130,21 @@ ion-title {
 }
 
 :root {
-    --ion-color-rose: red;
-    --ion-color-rose-rgb: 131,24,67;
-    --ion-color-rose-contrast: #ffffff;
-    --ion-color-rose-contrast-rgb: 255,255,255;
-    --ion-color-rose-shade: red;
-    --ion-color-rose-tint: red;
+    --ion-color-red: red;
+    --ion-color-red-rgb: 131,24,67;
+    --ion-color-red-contrast: #ffffff;
+    --ion-color-red-contrast-rgb: 255,255,255;
+    --ion-color-red-shade: red;
+    --ion-color-red-tint: red;
   }
 
 .ion-color-red {
-    --ion-color-base: var(--ion-color-rose);
-    --ion-color-base-rgb: var(--ion-color-rose-rgb);
-    --ion-color-contrast: var(--ion-color-rose-contrast);
-    --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
-    --ion-color-shade: var(--ion-color-rose-shade);
-    --ion-color-tint: var(--ion-color-rose-tint);
+    --ion-color-base: var(--ion-color-red);
+    --ion-color-base-rgb: var(--ion-color-red-rgb);
+    --ion-color-contrast: var(--ion-color-red-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-red-contrast-rgb);
+    --ion-color-shade: var(--ion-color-red-shade);
+    --ion-color-tint: var(--ion-color-red-tint);
   }
 
 ion-datetime {
@@ -152,6 +152,6 @@ ion-datetime {
     --background-rgb: 255,241,242;
     
     border-radius: 16px;
-    box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
+    box-shadow: rgba(var(--ion-color-red-rgb), 0.3) 0px 10px 15px -3px;
   }
 </style>
