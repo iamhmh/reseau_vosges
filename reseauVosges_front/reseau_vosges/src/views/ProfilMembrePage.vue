@@ -48,12 +48,12 @@
                                 <ion-icon :icon="shareSocialOutline"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
-                        <ion-modal id="example-modal" ref="modal" trigger="openShare">
+                        <ion-modal :is-open="isModalOpen" id="example-modal" ref="modal" trigger="openShare">
                             <ion-list lines="none">
-                                <ion-item :button="true" :detail="false" @click="dismiss()">
+                                <ion-item :button="true" :detail="false">
                                     <ion-label>Partager la vCard</ion-label>
                                 </ion-item>
-                                <ion-item :button="true" :detail="false" @click="dismiss()">
+                                <ion-item :button="true" :detail="false">
                                     <ion-label>Partager le QR Code</ion-label>
                                 </ion-item>
                             </ion-list>
@@ -62,10 +62,10 @@
                     <ion-col size="2" style="display: flex; justify-content: center;">
                         <ion-fab>
                             <ion-fab-button>
-                                <ion-icon :icon="listOutline" id="openReco"></ion-icon>
+                                <ion-icon :icon="listOutline" @click="openModal()"></ion-icon>
                             </ion-fab-button>
                         </ion-fab>
-                        <ion-modal id="example-modal" ref="modal" trigger="openReco">
+                        <ion-modal :is-open="isModalOpen" id="example-modal" ref="modal">
                             <ion-list lines="none" style="background-color: red;padding: 0px;">
                                 <ion-item style="border-bottom: 1px solid black; ">
                                     <ion-grid>
@@ -75,7 +75,7 @@
                                             </ion-col>
                                             <ion-col size="2" style="display: flex; justify-content: flex-end;">
                                                 <ion-buttons>
-                                                    <ion-button @click="dismiss()">
+                                                    <ion-button @click="closeModal()">
                                                         <ion-icon aria-hidden="true" :icon="closeOutline" style="color: white; width: 30px;" />
                                                     </ion-button>
                                                 </ion-buttons>
@@ -146,31 +146,20 @@
     </ion-page>
   </template>
   
-<script lang="ts">
+<script lang="ts" setup>
 import { IonList, IonItem, IonLabel, IonModal, IonFab, IonFabButton, IonCol, IonGrid, IonRow, IonIcon, IonAvatar, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
-import { ellipsisHorizontalOutline, listOutline, shareSocialOutline, mailOutline, callOutline, chevronForwardOutline, chevronBackOutline, closeOutline } from 'ionicons/icons';
-import { defineComponent, ref } from 'vue';
-  
-export default defineComponent({
-    components: {  IonList, IonItem, IonLabel, IonModal, IonFab, IonFabButton, IonCol, IonGrid, IonRow, IonIcon, IonAvatar, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-    },
-      data() {
-      return {
-        chevronForwardOutline: chevronForwardOutline,
-        chevronBackOutline: chevronBackOutline,
-        callOutline: callOutline,
-        mailOutline: mailOutline,
-        shareSocialOutline: shareSocialOutline,
-        listOutline: listOutline,
-        ellipsisHorizontalOutline: ellipsisHorizontalOutline,
-        closeOutline: closeOutline,
-      };
-    },
-    });
+import { ellipsisHorizontalOutline, listOutline, shareSocialOutline, mailOutline, callOutline, chevronBackOutline, closeOutline } from 'ionicons/icons';
+import {reactive, ref} from 'vue';
+
+const isModalOpen = ref(false)
+
+const openModal = () => {
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
   </script>
   
   <style>

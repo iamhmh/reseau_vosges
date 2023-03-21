@@ -30,8 +30,6 @@
           </ion-button>
         </ion-item>
       </ion-list>
-      
-      
 
     </ion-content>
   </ion-page>

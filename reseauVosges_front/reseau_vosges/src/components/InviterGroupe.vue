@@ -35,10 +35,12 @@
                 </ion-button>
             </ion-col>
             <ion-col size="3" id="col_button">
-                <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
-                    <ion-icon aria-hidden="true" :icon="manOutline" style="color: red"/>
-                    <ion-label style="color: red">Invité</ion-label>
-                </ion-button>
+                <a href="/tabs/invitation/invitation1">
+                   <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
+                        <ion-icon aria-hidden="true" :icon="manOutline" style="color: red"/>
+                        <ion-label style="color: red">Invité</ion-label>
+                    </ion-button> 
+                </a>
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -32,6 +32,26 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/InvitationPage.vue')
       },
       {
+        path: 'invitation/invitation1',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation1Page.vue')
+      },
+      {
+        path: 'invitation/invitation2',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation2Page.vue')
+      },
+      {
+        path: 'invitation/invitation3',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation3Page.vue')
+      },
+      {
+        path: 'invitation/invitation4',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation4Page.vue')
+      },
+      {
+        path: 'invitation/invitation5',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation5Page.vue')
+      },
+      {
         path: 'profilmembre',
         component: () => import('@/views/ProfilMembrePage.vue')
       },

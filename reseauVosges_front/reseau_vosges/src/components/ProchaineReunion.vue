@@ -16,7 +16,7 @@
           </ion-grid>
         </ion-card-header>
         <ion-card-subtitle style="margin-top: 0px;">Jeudi, Mars 16, 2023</ion-card-subtitle>
-        <ion-card-content style="padding-top: 5px;">
+        <ion-card-content style="padding-top: 5px; padding-bottom: 0px">
           <ion-grid>
             <ion-row>
               <ion-col size="12" size-sm="3">
