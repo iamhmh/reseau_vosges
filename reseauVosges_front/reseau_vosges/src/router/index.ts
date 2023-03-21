@@ -52,6 +52,14 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/components/EnregistrerUneVisite/Invitation5Page.vue')
       },
       {
+        path: 'invitation/moi1',
+        component: () => import('@/components/EnregistrerUneVisiteMoi/Moi1Page.vue')
+      },
+      {
+        path: 'invitation/moi2',
+        component: () => import('@/components/EnregistrerUneVisiteMoi/Moi2Page.vue')
+      },
+      {
         path: 'profilmembre',
         component: () => import('@/views/ProfilMembrePage.vue')
       },

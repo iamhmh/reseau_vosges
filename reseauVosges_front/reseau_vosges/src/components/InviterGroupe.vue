@@ -4,19 +4,19 @@
     <ion-grid>
         <ion-row class="ion-justify-content-center">
             <ion-col size="3" id="col_button">
-                <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
+                <ion-button href="/tabs/invitation/invitationgroupemail1" style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
                     <ion-icon aria-hidden="true" :icon="mailOutline" style="color: red"/>
                     <ion-label style="color: red">E-mail</ion-label>
                 </ion-button>
             </ion-col>
             <ion-col size="3" id="col_button">
-                <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
+                <ion-button href="/tabs/invitation/invitationgroupsms" style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
                     <ion-icon aria-hidden="true" :icon="chatbubbleEllipsesOutline" style="color: red"/>
                     <ion-label style="color: red">SMS</ion-label>
                 </ion-button>
             </ion-col>
             <ion-col size="3" id="col_button">
-                <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
+                <ion-button href="/tabs/invitation/invitationgroup" style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
                     <ion-icon aria-hidden="true" :icon="shareSocialOutline" style="color: red"/>
                     <ion-label style="color: red">Partager</ion-label>
                 </ion-button>
@@ -29,30 +29,28 @@
     <ion-grid>
         <ion-row class="ion-justify-content-center">
             <ion-col size="3" id="col_button">
-                <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
+                <ion-button href="/tabs/invitation/moi1" style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
                     <ion-icon aria-hidden="true" :icon="personOutline" style="color: red"/>
                     <ion-label style="color: red">Moi</ion-label>
                 </ion-button>
             </ion-col>
             <ion-col size="3" id="col_button">
-                <a href="/tabs/invitation/invitation1">
-                   <ion-button style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
+                   <ion-button href="/tabs/invitation/invitation1" style="--background: white; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); border-radius: 10px;">
                         <ion-icon aria-hidden="true" :icon="manOutline" style="color: red"/>
                         <ion-label style="color: red">Invité</ion-label>
                     </ion-button> 
-                </a>
             </ion-col>
         </ion-row>
     </ion-grid>
 </template>
   
 <script lang="ts">
-import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+import { IonButton, IonIcon, IonLabel, IonCol, IonGrid, IonRow } from '@ionic/vue';
 import { mailOutline, chatbubbleEllipsesOutline, shareSocialOutline, personOutline, manOutline } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonCol, IonGrid, IonRow },
+    components: { IonCol, IonGrid, IonRow, IonButton, IonIcon, IonLabel, },
     setup() {
       return {
         mailOutline: mailOutline,

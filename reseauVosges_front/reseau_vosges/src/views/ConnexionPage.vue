@@ -2,7 +2,7 @@
     <ion-page>
         <ion-header>
             <ion-thumbnail>
-                <img alt="Silhouette of mountains" src="../bniconnnect.png" />
+                <img alt="Silhouette of mountains" src="" />
             </ion-thumbnail>
         </ion-header>
         <ion-content>

@@ -9,7 +9,7 @@
           </ion-buttons>
           <ion-title>MON PROFIL</ion-title>
         </ion-toolbar>
-        <FicheUser />
+       <FicheUser />
         <a href="/tabs/userprofile/photo" style="text-decoration: none; color: red; margin-left: 40px; "><ion-icon :icon="cameraOutline"></ion-icon></a>
       </ion-header>
       <ion-content>

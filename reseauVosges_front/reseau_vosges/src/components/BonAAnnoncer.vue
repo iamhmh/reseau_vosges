@@ -101,7 +101,7 @@
 <script lang="ts" setup>
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonList, IonListHeader, IonLabel, IonItem, IonGrid, IonRow, IonCol, } from '@ionic/vue';
 import { peopleCircleOutline, chatbubbleEllipsesOutline, eyeOutline, closeOutline, chevronForwardOutline, handLeftOutline } from 'ionicons/icons';
-import {reactive, ref} from 'vue';
+import { ref} from 'vue';
 
 const isModalOpen = ref(false)
 

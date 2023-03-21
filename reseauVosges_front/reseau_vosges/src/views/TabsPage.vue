@@ -29,84 +29,43 @@
         </ion-tab-button>
       </ion-tab-bar>
 
-      <ion-modal :is-open="isModalOpen" ref="modal" trigger="plus-modal" id="modalMenu">
-      <ion-header>
-        <ion-toolbar id="modalToolbar">
-          <ion-buttons slot="end">
-            <ion-button @click="closeModal()">
-              <ion-icon aria-hidden="true" :icon="closeOutline" style="color: white;"/>
-            </ion-button>
-          </ion-buttons>
-          <ion-grid>
-            <ion-row>
-              <ion-col size="12" style="display: flex; justify-content: center; color: white; margin-left: 22px;">
-                <h4><strong>RESEAU<br>VOSGES</strong></h4>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding" id="modalContent">
-        <ion-list lines="none" style="margin-top: 100px;">
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">BNI Business Builder</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="/tabs/userprofile" id="modalLabelA">Profil</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Résumé de la réunion</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Réglages</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Tuto nouvel utilisateur</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Nouveautés</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Support</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Commentaires</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Centre de ressources</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">A propos</a></ion-label>
-          </ion-item >
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Conditions d'utilisation</a></ion-label>
-          </ion-item>
-          <ion-item id="modalItem">
-            <ion-label id="modalLabel"><a href="#" id="modalLabelA">Déconnexion</a></ion-label>
-          </ion-item>
-        </ion-list>
+      <ion-modal :is-open="isModalOpen" ref="modal" id="modalMenu">
+        <ion-header>
+          <ion-toolbar id="modalToolbar">
+            <ion-buttons slot="end">
+              <ion-button @click="closeModal()">
+                <ion-icon aria-hidden="true" :icon="closeOutline" style="color: white;"/>
+              </ion-button>
+            </ion-buttons>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12" style="display: flex; justify-content: center; color: white; margin-left: 22px;">
+                  <h4><strong>RESEAU<br>VOSGES</strong></h4>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+        </ion-header>
 
-
-      </ion-content>
-  </ion-modal>
+        <MenuModal/>
+        
+      </ion-modal>
     </ion-tabs>
-
-    
-  
   </ion-page>
 </template>
 
 <script lang="ts" setup>
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonModal, IonImg, IonHeader, IonToolbar, IonButtons, IonButton, IonContent, IonList, IonItem } from '@ionic/vue';
+import { IonGrid, IonRow, IonCol, IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonModal, IonHeader, IonToolbar, IonButtons, IonButton,} from '@ionic/vue';
 import { readerOutline, searchOutline, home, menuOutline, mailOpenOutline, closeOutline } from 'ionicons/icons';
-import {reactive, ref} from 'vue';
+import MenuModal from '../components/modals/MenuModal.vue';
+import { ref } from 'vue';
 
 const isModalOpen = ref(false)
 
 const openModal = () => {
   isModalOpen.value = true
 }
-
+ 
 const closeModal = () => {
   isModalOpen.value = false
 }
@@ -143,32 +102,5 @@ const closeModal = () => {
   }
   ion-tab-button {
     --background: red;
-  }
-  #modalMenu {
-    background-color: #efefef;
-    --border-radius: 40px;
-    padding-top : 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-  }
-  #modalToolbar {
-    --background: rgb(255, 0, 0);
-    height: 100px;
-  }
-  #modalContent {
-    --background: rgb(255, 0, 0);
-  }
-  #modalItem {
-    --background: red;
-  }
-  #modalLabel {
-    text-align: center;
-  }
-  #modalLabelA {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
   }
 </style>
