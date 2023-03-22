@@ -153,51 +153,49 @@ ion-title {
 ion-checkbox {
     --size: 32px;
     --background-checked: red;
-  }
+}
 ion-checkbox::part(container) {
     border-radius: 6px;
     border: 2px solid red;
 }
-
 ion-range::part(tick) {
     background: rgb(89, 89, 89);
-  }
+}
 
-  ion-range::part(tick-active) {
-    background: rgb(89, 89, 89);
-  }
+ion-range::part(tick-active) {
+background: rgb(89, 89, 89);
+}
 
-  ion-range::part(pin) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+ion-range::part(pin) {
+display: inline-flex;
+align-items: center;
+justify-content: center;
 
-    background: red;
-    color: #fff;
+background: red;
+color: #fff;
 
-    border-radius: 50%;
-    transform: scale(1.01);
+border-radius: 50%;
+transform: scale(1.01);
 
-    top: -20px;
+top: -20px;
 
-    min-width: 28px;
-    height: 28px;
-    transition: transform 120ms ease, background 120ms ease;
-  }
+min-width: 28px;
+height: 28px;
+transition: transform 120ms ease, background 120ms ease;
+}
 
-  ion-range::part(pin)::before {
-    content: none;
-  }
+ion-range::part(pin)::before {
+content: none;
+}
 
-  ion-range::part(knob) {
-    background: red;
-  }
+ion-range::part(knob) {
+background: red;
+}
 
-  ion-range::part(bar) {
-    background: rgb(89, 89, 89);
-  }
-
-  ion-range::part(bar-active) {
-    background: rgb(89, 89, 89);
-  }
+ion-range::part(bar) {
+background: rgb(89, 89, 89);
+}
+ion-range::part(bar-active) {
+background: rgb(89, 89, 89);
+}
 </style>

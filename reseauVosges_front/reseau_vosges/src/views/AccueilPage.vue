@@ -2,9 +2,7 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title>ACCUEIL</ion-title>
-        </ion-toolbar>
+        <PageTitle title="ACCUEIL" />
         <FicheUser/>
       </ion-header>
 
@@ -19,19 +17,18 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonContent, IonHeader, IonToolbar, IonTitle} from '@ionic/vue';
+import { IonPage, IonContent, IonHeader } from '@ionic/vue';
+import PageTitle from '@/components/home/PageTitle.vue';
 import FicheUser from '@/components/FicheUser.vue';
 import ProchaineReunion from '@/components/ProchaineReunion.vue';
 import BonAAnnoncer from '@/components/BonAAnnoncer.vue';
 import HistoriqueUser from '@/components/HistoriqueUser.vue';
-
 </script>
 
 <style>
 .header-collapse-condense ion-toolbar {
   --background: #f4f4f4;
 }
-
 ion-header {
     background: #f4f4f4;
     position: fixed;

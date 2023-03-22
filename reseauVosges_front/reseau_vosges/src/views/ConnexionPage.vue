@@ -2,7 +2,7 @@
     <ion-page>
         <ion-header>
             <ion-thumbnail>
-                <img alt="Silhouette of mountains" src="" />
+                <img alt="Silhouette of mountains" src="@/assets/images/bniconnnect.png" />
             </ion-thumbnail>
         </ion-header>
         <ion-content>
@@ -21,47 +21,35 @@
         </ion-content>
     </ion-page>
 </template>
-<script lang="ts">
+
+<script lang="ts" setup>
 import { IonPage, IonHeader, IonContent, IonList, IonItem, IonLabel, IonInput, IonButton, IonThumbnail } from '@ionic/vue';
-import { defineComponent } from 'vue';
-export default defineComponent({
-    components: {
-        IonPage,
-        IonHeader,
-        IonContent,
-        IonList,
-        IonItem,
-        IonLabel,
-        IonInput,
-        IonButton,
-        IonThumbnail,
-    },
-});
 </script>
+
 <style>
-    ion-thumbnail {
+ion-thumbnail {
     --size: 140px;
     --border-radius: 14px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-  }
-  ion-content ion-list {
+}
+ion-content ion-list {
     margin-top: 100px;
-  }
-  ion-content ion-button {
+}
+ion-content ion-button {
     margin-top: 80px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-  }
-    ion-content a {
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        text-align: center;
-        text-decoration: none;
-        color: #000;
-    }
+}
+ion-content a {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
 </style>

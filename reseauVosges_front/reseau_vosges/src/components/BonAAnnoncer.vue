@@ -7,7 +7,7 @@
               <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-end;">
                 <ion-card-title>BONS A ANNONCER</ion-card-title>
               </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: flex-end;">
+              <ion-col size-sm="3" style="display: flex; justify-content: flex-end;">
                 <ion-button fill="clear" @click="openModal()">
                 <ion-icon aria-hidden="true" :icon="eyeOutline" />
               </ion-button>
@@ -16,44 +16,11 @@
           </ion-grid>
         </ion-card-header>
       <ion-card-content>
-        <ion-grid>
-            <ion-row>
-              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    <ion-icon slot="start" :icon="peopleCircleOutline" ></ion-icon> Merci pour le business
-                </a>
-              </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    0+
-                </a>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
-                <a href="" style="text-decoration: none; color: black;"><ion-icon slot="start" :icon="peopleCircleOutline"></ion-icon> Recommandations</a>
-              </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    0+
-                </a>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
-                <a href="" style="text-decoration: none; color: black;"><ion-icon slot="start" :icon="chatbubbleEllipsesOutline"></ion-icon> Tête-à-tête</a>
-              </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    0+
-                </a>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
+
+        <ListBoutonBonAAnnoncerVue number="0" :icon="peopleCircleOutline" url="/tabs/addmpb" label=" Merci pour le business" />
+        <ListBoutonBonAAnnoncerVue number="0" :icon="peopleCircleOutline" url="/tabs/addrecommendation" label=" Recommandations" />
+        <ListBoutonBonAAnnoncerVue number="0" :icon="chatbubbleEllipsesOutline" url="/tabs/addfacetoface" label=" Tête-à-tête" />
+
       </ion-card-content>
     </ion-card>
 
@@ -69,7 +36,7 @@
         </ion-toolbar>
       </ion-header>
 
-      <BonAAnnoncerModal />
+      <BonAAnnoncerModal/>
       
     </ion-modal>
   </div>
@@ -79,7 +46,8 @@
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonToolbar, IonTitle, IonGrid, IonRow, IonCol, } from '@ionic/vue';
 import { peopleCircleOutline, chatbubbleEllipsesOutline, eyeOutline, closeOutline, } from 'ionicons/icons';
 import BonAAnnoncerModal from './modals/BonAAnnoncerModal.vue';
-import { ref} from 'vue';
+import ListBoutonBonAAnnoncerVue from './boutons/BoutonBonAAnnoncer.vue';
+import { ref } from 'vue';
 
 const isModalOpen = ref(false)
 
