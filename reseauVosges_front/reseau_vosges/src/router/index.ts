@@ -32,60 +32,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/InvitationPage.vue')
       },
       {
-        path: 'invitation/invitation1',
-        component: () => import('@/components/EnregistrerUneVisite/Invitation1Page.vue')
-      },
-      {
-        path: 'invitation/invitation2',
-        component: () => import('@/components/EnregistrerUneVisite/Invitation2Page.vue')
-      },
-      {
-        path: 'invitation/invitation3',
-        component: () => import('@/components/EnregistrerUneVisite/Invitation3Page.vue')
-      },
-      {
-        path: 'invitation/invitation4',
-        component: () => import('@/components/EnregistrerUneVisite/Invitation4Page.vue')
-      },
-      {
-        path: 'invitation/invitation5',
-        component: () => import('@/components/EnregistrerUneVisite/Invitation5Page.vue')
-      },
-      {
-        path: 'invitation/moi1',
-        component: () => import('@/components/EnregistrerUneVisiteMoi/Moi1Page.vue')
-      },
-      {
-        path: 'invitation/moi2',
-        component: () => import('@/components/EnregistrerUneVisiteMoi/Moi2Page.vue')
-      },
-      {
         path: 'profilmembre',
         component: () => import('@/views/ProfilMembrePage.vue')
-      },
-      {
-        path: 'bonmpb',
-        component: () => import('@/views/bons/BonMPBPage.vue')
-      },
-      {
-        path: 'bonreco',
-        component: () => import('@/views/bons/BonRecoPage.vue')
-      },
-      {
-        path: 'bonfacetoface',
-        component: () => import('@/views/bons/BonTeteATetePage.vue')
-      },
-      {
-        path: 'addmpb',
-        component: () => import('@/views/tools/EnregistrerUnMPB.vue')
-      },
-      {
-        path: 'addrecommendation',
-        component: () => import('@/views/tools/BonDeRecommandation.vue')
-      },
-      {
-        path: 'addfacetoface',
-        component: () => import('@/views/tools/TeteATete.vue')
       },
       {
         path: 'userprofile',
@@ -118,6 +66,58 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'userprofile/user_account_params',
         component: () => import('@/components/UserProfile/ParametreCompteUser.vue')
+      },
+      {
+        path: 'bonmpb',
+        component: () => import('@/components/bons/BonMPBPage.vue')
+      },
+      {
+        path: 'bonreco',
+        component: () => import('@/components/bons/BonRecoPage.vue')
+      },
+      {
+        path: 'bonfacetoface',
+        component: () => import('@/components/bons/BonTeteATetePage.vue')
+      },
+      {
+        path: 'addmpb',
+        component: () => import('@/components/bons/EnregistrerUnMPB.vue')
+      },
+      {
+        path: 'addrecommendation',
+        component: () => import('@/components/bons/EnregistrerUneReco.vue')
+      },
+      {
+        path: 'addfacetoface',
+        component: () => import('@/components/bons/EnregistrerUnTeteATete.vue')
+      },
+      {
+        path: 'invitation/invitation1',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation1Page.vue')
+      },
+      {
+        path: 'invitation/invitation2',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation2Page.vue')
+      },
+      {
+        path: 'invitation/invitation3',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation3Page.vue')
+      },
+      {
+        path: 'invitation/invitation4',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation4Page.vue')
+      },
+      {
+        path: 'invitation/invitation5',
+        component: () => import('@/components/EnregistrerUneVisite/Invitation5Page.vue')
+      },
+      {
+        path: 'invitation/moi1',
+        component: () => import('@/components/EnregistrerUneVisiteMoi/Moi1Page.vue')
+      },
+      {
+        path: 'invitation/moi2',
+        component: () => import('@/components/EnregistrerUneVisiteMoi/Moi2Page.vue')
       },
     ]
   },
