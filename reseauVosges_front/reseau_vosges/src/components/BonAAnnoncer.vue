@@ -17,9 +17,9 @@
         </ion-card-header>
       <ion-card-content>
 
-        <ListBoutonBonAAnnoncerVue number="0" :icon="peopleCircleOutline" url="/tabs/addmpb" label=" Merci pour le business" />
-        <ListBoutonBonAAnnoncerVue number="0" :icon="peopleCircleOutline" url="/tabs/addrecommendation" label=" Recommandations" />
-        <ListBoutonBonAAnnoncerVue number="0" :icon="chatbubbleEllipsesOutline" url="/tabs/addfacetoface" label=" Tête-à-tête" />
+        <BoutonBonAAnnoncerVue number="0" :icon="peopleCircleOutline" url="/tabs/addmpb" label=" Merci pour le business" />
+        <BoutonBonAAnnoncerVue number="0" :icon="peopleCircleOutline" url="/tabs/addrecommendation" label=" Recommandations" />
+        <BoutonBonAAnnoncerVue number="0" :icon="chatbubbleEllipsesOutline" url="/tabs/addfacetoface" label=" Tête-à-tête" />
 
       </ion-card-content>
     </ion-card>
@@ -46,7 +46,7 @@
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonToolbar, IonTitle, IonGrid, IonRow, IonCol, } from '@ionic/vue';
 import { peopleCircleOutline, chatbubbleEllipsesOutline, eyeOutline, closeOutline, } from 'ionicons/icons';
 import BonAAnnoncerModal from './modals/BonAAnnoncerModal.vue';
-import ListBoutonBonAAnnoncerVue from './boutons/BoutonBonAAnnoncer.vue';
+import BoutonBonAAnnoncerVue from './home/tools/boutons/BoutonBonAAnnoncer.vue';
 import { ref } from 'vue';
 
 const isModalOpen = ref(false)

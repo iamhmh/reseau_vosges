@@ -30,7 +30,7 @@
 import { IonIcon, IonPage, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton } from '@ionic/vue';
 import { cameraOutline, chevronForwardOutline, chevronBackOutline, } from 'ionicons/icons';
 import FicheUser from '@/components/FicheUser.vue';
-import ListBoutonProfilPage from '@/components/list/ListBoutonProfilPage.vue';
+import ListBoutonProfilPage from '@/components/home/tools/list/ListBoutonProfilPage.vue';
 
 </script>
   

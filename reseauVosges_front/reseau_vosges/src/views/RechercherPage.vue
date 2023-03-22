@@ -12,7 +12,7 @@
         </ion-toolbar>
       </ion-header>
 
-      <ListRechercherVue />
+      <ListRechercherVue/>
 
     </ion-content>
   </ion-page>
@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import { IonIcon, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent,} from '@ionic/vue';
 import { chevronBackOutline } from 'ionicons/icons';
-import ListRechercherVue from '@/components/list/ListRechercher.vue';
+import ListRechercherVue from '@/components/home/tools/list/ListRechercher.vue';
 </script>
 
 <style>

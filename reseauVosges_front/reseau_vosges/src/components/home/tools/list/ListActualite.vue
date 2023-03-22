@@ -29,7 +29,7 @@ interface Props {
     name: string;
     date: string;
     amount: string;
-    icon1: any;
+    icon1: string;
     icon2: any;
     color?: string;
 }

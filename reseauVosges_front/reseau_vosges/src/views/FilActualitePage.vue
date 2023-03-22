@@ -44,7 +44,7 @@
         </ion-list>
       </ion-modal>
       
-      <ListActualite url="#" date="Mars 16 2023" name="Aurélien MILLOTTE" amount="€960" :icon1="handLeftOutline" :icon2="chevronForwardOutline" color="red"/>
+      <ListActualite url="#" date="Mars 16 2023" name="Aurélien MILLOTTE" amount="€960" :icon1="Reco" :icon2="chevronForwardOutline" color="red"/>
 
       <BoutonFabMulti/>
 
@@ -55,9 +55,10 @@
 <script setup lang="ts">
 
 import { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonButton, IonIcon,  } from '@ionic/vue';
-import { chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline, personCircle, } from 'ionicons/icons';
-import BoutonFabMulti from '@/components/boutons/BoutonFabMulti.vue';
-import ListActualite from '@/components/list/ListActualite.vue';
+import { chevronBackOutline, optionsOutline, chevronForwardOutline, personCircle, } from 'ionicons/icons';
+import Reco from '@/assets/images/icon/recommandation.png';
+import BoutonFabMulti from '@/components/home/tools/boutons/BoutonFabMulti.vue';
+import ListActualite from '@/components/home/tools/list/ListActualite.vue';
 
 </script>
 
@@ -95,26 +96,22 @@ ion-button {
   --color: #3a3a3a;
   margin: 0;
 }
-
 ion-fab-list ion-fab-button {
   width: 60px;
   height: 60px;
 }
-
 ion-modal#example-modal {
     --min-width: 250px;
     --height: fit-content;
     --border-radius: 6px;
     --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
-  }
-
+}
 ion-modal#example-modal ion-item {
     --background: red;
     --color: #ffffff;
     --padding-start: 0;
     --padding-end: 0;
 } 
-  
 ion-modal#example-modal ion-icon {
     margin-right: 6px;
   
@@ -125,7 +122,6 @@ ion-modal#example-modal ion-icon {
   
     color: #ffffff;
 }
-  
 ion-modal#example-modal .wrapper {
     margin-bottom: 10px;
 }
