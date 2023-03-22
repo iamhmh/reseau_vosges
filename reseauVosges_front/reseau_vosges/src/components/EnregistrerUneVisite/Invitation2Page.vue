@@ -75,7 +75,7 @@
 <script lang="ts" setup>
 import { IonList, IonItem, IonSelect, IonSelectOption, IonCol, IonGrid, IonRow, IonIcon, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
 import { chevronBackOutline, chevronForwardOutline } from 'ionicons/icons';
-import Step2 from '../../assets/images/Step2.svg';
+import Step2 from '../../assets/images/svg/step/Step2.svg';
 
 </script>
 

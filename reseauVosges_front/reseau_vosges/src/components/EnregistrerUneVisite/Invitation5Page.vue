@@ -101,7 +101,7 @@
 <script lang="ts" setup>
 import { IonDatetime, IonDatetimeButton, IonModal, IonInput, IonLabel, IonList, IonItem, IonRadio, IonRadioGroup, IonCol, IonGrid, IonRow, IonIcon, IonButtons, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
 import { chevronBackOutline, chevronForwardOutline } from 'ionicons/icons';
-import Step5 from '../../assets/images/Step5.svg';
+import Step5 from '../../assets/images/svg/step/Step5.svg';
 
 </script>
 

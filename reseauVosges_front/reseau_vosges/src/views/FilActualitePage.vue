@@ -26,6 +26,23 @@
           </ion-row>
         </ion-grid>
       </ion-header>
+
+      <ion-modal id="example-modal" ref="modal" trigger="open-custom-dialog">
+        <ion-list lines="none">
+          <ion-item :button="true" :detail="false" @click="dismiss()">
+            <ion-icon :icon="personCircle"></ion-icon>
+            <ion-label>MPB</ion-label>
+          </ion-item>
+          <ion-item :button="true" :detail="false" @click="dismiss()">
+            <ion-icon :icon="personCircle"></ion-icon>
+            <ion-label>Recommandations</ion-label>
+          </ion-item>
+          <ion-item :button="true" :detail="false" @click="dismiss()">
+            <ion-icon :icon="personCircle"></ion-icon>
+            <ion-label>Tête-à-tête</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-modal>
       
       <ListActualite url="#" date="Mars 16 2023" name="Aurélien MILLOTTE" amount="€960" :icon1="handLeftOutline" :icon2="chevronForwardOutline" color="red"/>
 
@@ -37,8 +54,8 @@
 
 <script setup lang="ts">
 
-import { IonButtons, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonButton, IonIcon} from '@ionic/vue';
-import { chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline} from 'ionicons/icons';
+import { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonButton, IonIcon,  } from '@ionic/vue';
+import { chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline, personCircle, } from 'ionicons/icons';
 import BoutonFabMulti from '@/components/boutons/BoutonFabMulti.vue';
 import ListActualite from '@/components/list/ListActualite.vue';
 
