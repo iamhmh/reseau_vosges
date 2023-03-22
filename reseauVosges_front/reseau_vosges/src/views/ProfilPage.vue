@@ -14,63 +14,23 @@
       </ion-header>
       <ion-content>
 
-      <ion-item>
-        <ion-label>
-          <a href="">PARTAGER MON PROFIL</a>
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>
-          <a href="/tabs/userprofile/mybusiness">MON BUSINESS</a> 
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>
-          <a href="/tabs/userprofile/address">ADRESSE</a> 
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>
-          <a href="/tabs/userprofile/contact">CONTACT</a> 
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>
-          <a href="/tabs/userprofile/user_account_params">PARAMETRE DU COMPTE</a> 
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>
-          <a href="/tabs/userprofile/maj_username">MISE A JOUR DU NOM D'UTILISATEUR</a> 
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>
-          <a href="/tabs/userprofile/maj_password">MISE A JOUR DU MOT DE PASSE</a> 
-        </ion-label>
-        <ion-icon :icon="chevronForwardOutline" slot="end" style="color: red;"></ion-icon>
-      </ion-item>
+      <ListBoutonProfilPage url="#" label="PARTAGER MON PROFIL" :icon="chevronForwardOutline" color="red" />
+      <ListBoutonProfilPage url="/tabs/userprofile/mybusiness" label="MON BUSINESS" :icon="chevronForwardOutline" color="red" />
+      <ListBoutonProfilPage url="/tabs/userprofile/address" label="ADRESSE" :icon="chevronForwardOutline" color="red" />
+      <ListBoutonProfilPage url="/tabs/userprofile/contact" label="CONTACT" :icon="chevronForwardOutline" color="red" />
+      <ListBoutonProfilPage url="/tabs/userprofile/user_account_params" label="PARAMETRE DU COMPTE" :icon="chevronForwardOutline" color="red" />
+      <ListBoutonProfilPage url="/tabs/userprofile/maj_username" label="MISE A JOUR DU NOM D'UTILISATEUR" :icon="chevronForwardOutline" color="red" />
+      <ListBoutonProfilPage url="/tabs/userprofile/maj_password" label="MISE A JOUR DU MOT DE PASSE" :icon="chevronForwardOutline" color="red" />
 
     </ion-content>
   </ion-page>
 </template>
   
 <script setup lang="ts">
-import { IonItem, IonLabel, IonIcon, IonPage, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton } from '@ionic/vue';
-import { cameraOutline, chevronForwardOutline, chevronBackOutline,  } from 'ionicons/icons';
+import { IonIcon, IonPage, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton } from '@ionic/vue';
+import { cameraOutline, chevronForwardOutline, chevronBackOutline, } from 'ionicons/icons';
 import FicheUser from '@/components/FicheUser.vue';
+import ListBoutonProfilPage from '@/components/boutons/ListBoutonProfilPage.vue';
 
 </script>
   
