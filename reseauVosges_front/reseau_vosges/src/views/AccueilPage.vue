@@ -35,7 +35,7 @@ import HistoriqueUser from '@/components/HistoriqueUser.vue';
 ion-header {
     background: #f4f4f4;
     position: fixed;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #cacaca;
 }
 ion-title {
   text-align: center;

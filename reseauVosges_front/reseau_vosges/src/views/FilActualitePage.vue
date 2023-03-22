@@ -324,47 +324,20 @@
               </ion-grid>
       </ion-item>
 
-      <ion-fab slot="fixed" vertical="bottom" horizontal="center">
-        <ion-fab-button style="--background: red;--background-activated: red;--background-hover: red;">
-          <ion-icon :icon="addOutline"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-list side="top">
-          <ion-fab-button style="--background: red;--background-activated: red;--background-hover: red; vertical-align: text-bottom;">
-            <a href="/tabs/addrecommendation" style="color: white; font-size: 0.7em; font-weight: bold; text-decoration: none;">
-            <ion-icon :icon="addOutline" style="color: white;"></ion-icon>
-            <ion-icon :icon="handLeftOutline" style="color: white;"></ion-icon>
-            Recommandations</a>
-          </ion-fab-button>
-        </ion-fab-list>
-        <ion-fab-list side="start">
-          <ion-fab-button style="--background: red;--background-activated: red;--background-hover: red;">
-            <a href="/tabs/addmpb" style="color: white; font-size: 0.7em; font-weight: bold; text-decoration: none;">
-            <ion-icon :icon="addOutline" style="color: white;"></ion-icon>
-            <ion-icon :icon="colorPalette" style="color: white;"></ion-icon>
-            MPB</a>
-          </ion-fab-button>
-        </ion-fab-list>
-        <ion-fab-list side="end">
-          <ion-fab-button style="--background: red;--background-activated: red;--background-hover: red;">
-            <a href="/tabs/addfacetoface" style="color: white; font-size: 0.7em; font-weight: bold; text-decoration: none;">
-            <ion-icon :icon="addOutline" style="color: white;"></ion-icon>
-            <ion-icon :icon="globe" style="color: white;"></ion-icon>
-            Tête-à-tête</a>
-          </ion-fab-button>
-        </ion-fab-list>
-        
-      </ion-fab>
+      <boutonActualite/>
+
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList, IonIcon,  } from '@ionic/vue';
-import { personCircle, chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline, addOutline, colorPalette, globe } from 'ionicons/icons';
+import { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonIcon} from '@ionic/vue';
+import { personCircle, chevronBackOutline, optionsOutline, handLeftOutline, chevronForwardOutline} from 'ionicons/icons';
+import boutonActualite from '@/components/boutons/boutonActualite.vue';
 import { defineComponent } from 'vue';
 
 defineComponent({
-    components: { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonFab, IonFabButton, IonFabList,  IonIcon  },
+    components: { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonButton, IonIcon },
     methods: {
       dismiss() {
         this.$refs.modal.$el.dismiss();
@@ -410,6 +383,7 @@ ion-button {
   --color: #3a3a3a;
   margin: 0;
 }
+
 ion-fab-list ion-fab-button {
   width: 60px;
   height: 60px;

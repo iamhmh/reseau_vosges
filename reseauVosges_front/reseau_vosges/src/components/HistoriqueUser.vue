@@ -5,9 +5,9 @@
         <ion-grid>
             <ion-row>
               <ion-buttons>
-                <ion-button><a href="#">6 MOIS</a></ion-button>
-                <ion-button><a href="#">12 MOIS</a></ion-button>
-                <ion-button><a href="#">HISTORIQUE</a></ion-button>
+                <ion-button><a href="">6 MOIS</a></ion-button>
+                <ion-button><a href="">12 MOIS</a></ion-button>
+                <ion-button><a href="">HISTORIQUE</a></ion-button>
               </ion-buttons>
             </ion-row>
           </ion-grid>
@@ -15,27 +15,27 @@
       <ion-list>
         <ion-item>
           <ion-label>Tête-à-tête</ion-label>
-          <ion-badge style="color: white; background-color: red;">22k</ion-badge>
+          <ion-badge style="color: white; background-color: red;">00</ion-badge>
         </ion-item>
         <ion-item>
           <ion-label>Recommandations données</ion-label>
-          <ion-badge style="color: white; background-color: red;">118k</ion-badge>
+          <ion-badge style="color: white; background-color: red;">00</ion-badge>
         </ion-item>
         <ion-item>
           <ion-label>Recommandations reçues</ion-label>
-          <ion-badge style="color: white; background-color: red;">34k</ion-badge>
+          <ion-badge style="color: white; background-color: red;">00</ion-badge>
         </ion-item>
         <ion-item>
           <ion-label>Chiffre d'Affaires apporté</ion-label>
-          <ion-badge style="color: white; background-color: red;">80</ion-badge>
+          <ion-badge style="color: white; background-color: red;">00</ion-badge>
         </ion-item>
         <ion-item>
           <ion-label>Chiffre d'Affaires reçu</ion-label>
-          <ion-badge style="color: white; background-color: red;">70</ion-badge>
+          <ion-badge style="color: white; background-color: red;">00</ion-badge>
         </ion-item>
         <ion-item>
           <ion-label>Visiteurs</ion-label>
-          <ion-badge style="color: white; background-color: red;">1000</ion-badge>
+          <ion-badge style="color: white; background-color: red;">00</ion-badge>
         </ion-item>
       </ion-list>
 
@@ -65,6 +65,19 @@ ion-card-header ion-grid ion-row ion-button {
 ion-card-header ion-grid ion-row ion-button a {
   text-decoration: none;
   color: black;
+  font-size: 0.8em;
+}
+ion-card-header ion-grid ion-row ion-button a:hover {
+  color: red;
+}
+ion-card-header ion-grid ion-row ion-button a:active {
+  color: red;
+}
+ion-card-header ion-grid ion-row ion-button a:focus {
+  color: red;
+}
+ion-card-header ion-grid ion-row ion-button a:link {
+  color: red;
 }
 ion-card {
   margin: 0 auto;

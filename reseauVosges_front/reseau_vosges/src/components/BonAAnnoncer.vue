@@ -68,39 +68,17 @@
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
-        <ion-list>
-          <ion-list-header style="background: red; height: 15px;">
-            <ion-label style="color: white; font-size: 0.7em;">MPB</ion-label>
-          </ion-list-header>
-          <ion-item>
-            <ion-grid>
-                <ion-row>
-                  <ion-col size="2" size-sm="3" style="display: flex; justify-content: center;">
-                    <ion-icon aria-hidden="true" :icon="handLeftOutline" />
-                  </ion-col>
-                  <ion-col size="8" size-sm="3" style="font-size: 0.9em;">
-                    Mars 16 2023
-                    <br>
-                    <a href="/tabs/bonmpb" style="color: red;">Aurélien MILLOTTE - €960</a>
-                  </ion-col>
-                  <ion-col size="2" size-sm="3">
-                    <ion-button fill="clear">
-                      <a href="/tabs/bonmpb"><ion-icon aria-hidden="true" :icon="chevronForwardOutline" style="color: red;"/></a>
-                    </ion-button>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-          </ion-item>
-        </ion-list>
-      </ion-content>
+
+      <BonAAnnoncerModal />
+      
     </ion-modal>
   </div>
 </template>
   
 <script lang="ts" setup>
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonList, IonListHeader, IonLabel, IonItem, IonGrid, IonRow, IonCol, } from '@ionic/vue';
-import { peopleCircleOutline, chatbubbleEllipsesOutline, eyeOutline, closeOutline, chevronForwardOutline, handLeftOutline } from 'ionicons/icons';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonToolbar, IonTitle, IonGrid, IonRow, IonCol, } from '@ionic/vue';
+import { peopleCircleOutline, chatbubbleEllipsesOutline, eyeOutline, closeOutline, } from 'ionicons/icons';
+import BonAAnnoncerModal from './modals/BonAAnnoncerModal.vue';
 import { ref} from 'vue';
 
 const isModalOpen = ref(false)

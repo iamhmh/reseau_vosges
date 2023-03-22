@@ -57,96 +57,18 @@
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
-          <p id="contenuReunion">Réunion: <strong>En personne</strong></p>
+      
+      <ProchaineReunionModal />
 
-          <ion-card id="mpbtotal">
-            <ion-card-content>
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="2" size-sm="3">
-                    <ion-icon aria-hidden="true" :icon="handLeftOutline" />
-                  </ion-col>
-                  <ion-col size="5" size-sm="3">
-                    MPB Total du groupe
-                  </ion-col>
-                  <ion-col size="5" size-sm="3">
-                    €8.11k
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card id="mpbtotal">
-            <ion-card-header>
-                <ion-card-title>MES BONS</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-grid>
-            <ion-row>
-              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    <ion-icon slot="start" :icon="peopleCircleOutline" ></ion-icon> Merci pour le business
-                </a>
-              </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    0+
-                </a>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
-                <a href="" style="text-decoration: none; color: black;"><ion-icon slot="start" :icon="peopleCircleOutline"></ion-icon> Recommandations</a>
-              </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    0+
-                </a>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-              <ion-col size="8" size-sm="3" style="display: flex; justify-content: flex-start;">
-                <a href="" style="text-decoration: none; color: black;"><ion-icon slot="start" :icon="chatbubbleEllipsesOutline"></ion-icon> Tête-à-tête</a>
-              </ion-col>
-              <ion-col size="4" size-sm="3" style="display: flex; justify-content: center; font-size: 0.9em; ">
-                <a href="/tabs/addmpb" style="text-decoration: none; color: black;">
-                    0+
-                </a>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-            </ion-card-content>
-          </ion-card>
-          
-          <ion-card id="mpbtotal">
-            <ion-card-header>
-                <ion-card-title>CONFERENCIERS</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-item>
-                <ion-avatar slot="start">
-                  <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-                </ion-avatar>
-                <ion-label>Item Avatar</ion-label>
-                <p>Poste</p>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-      </ion-content>
     </ion-modal>
 
   </div>
 </template>
 
 <script lang="ts" setup>
-import { IonGrid, IonRow, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonAvatar, IonItem, IonLabel, IonCol } from '@ionic/vue';
-import { eyeOutline, closeOutline, handLeftOutline, peopleCircleOutline, chatbubbleEllipsesOutline} from 'ionicons/icons';
+import { IonGrid, IonRow, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonButton, IonIcon, IonButtons, IonModal, IonHeader, IonToolbar, IonTitle, IonCol } from '@ionic/vue';
+import { eyeOutline, closeOutline} from 'ionicons/icons';
+import ProchaineReunionModal from './modals/ProchaineReunionModal.vue';
 import { ref } from 'vue';
 
 const isModalOpen = ref(false)
@@ -178,7 +100,7 @@ ion-card-header ion-grid ion-row {
 #prochaineReunion {
   margin: 0 auto;
   width: 90%;
-  margin-top: 160px;
+  margin-top: 180px;
   margin-bottom: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
