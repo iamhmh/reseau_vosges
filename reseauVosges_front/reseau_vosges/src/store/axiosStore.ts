@@ -16,26 +16,27 @@ export const axiosInstance = axios.create({
   baseURL: "http://localhost:3000/test1",
 });
 
-const setUpAxios = (): void => {
-  axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
-    const token: string | null = localStorage.getItem("token");
-    if (token) {
-      config.headers!.authorization = "Bearer " + token;
-    }
-    return config;
-  });
-  axiosInstance.interceptors.response.use(
-    (reponse: AxiosResponse) => reponse.data,
-    (error) => {
-      console.log(error);
-      if (error) {
-        const { status, data } = error.response;
 
-        if (status === 403 && data && data.data && data.data.jwtExpired) {
-          store.commit("LOGOUT");
-        }
-        throw { status, data };
+const setUpAxios = (): void => {
+  axiosInstance.interceptors.request.use(
+    (config: AxiosRequestConfig) => {
+      const token = store.state.token;
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
       }
+      return config;
+    },
+    (error: AxiosError) => {
+      return Promise.reject(error);
+    }
+  );
+
+  axiosInstance.interceptors.response.use(
+    (response: AxiosResponse) => {
+      return response;
+    },
+    (error: AxiosError) => {
+      return Promise.reject(error);
     }
   );
 };
