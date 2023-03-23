@@ -11,7 +11,7 @@
                 <ion-label id="modalLabel"><a href="/tabs/settings" id="modalLabelA">Réglages</a></ion-label>
             </ion-item>
             <ion-item id="modalItem">
-                <ion-label id="modalLabel"><a href="#" id="modalLabelA">Admin</a></ion-label>
+                <ion-label id="modalLabel"><a href="/admin" id="modalLabelA">Admin</a></ion-label>
             </ion-item>
             <ion-item id="modalItem">
                 <ion-label id="modalLabel"><a href="/login" id="modalLabelA">Déconnexion</a></ion-label>
