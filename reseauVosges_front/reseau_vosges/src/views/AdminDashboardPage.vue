@@ -72,69 +72,51 @@
         <FicheAdmin />
     </ion-header>
     <ion-content class="ion-padding">
+
         <!--User List-->
         <ion-list>
             <ion-label id="labelList">Liste des membres</ion-label>
-            <ion-item>
-                <ion-label>NOM Prénom</ion-label>
-                <ion-select>
-                    <ion-select-option value="">Voir</ion-select-option>
-                    <ion-select-option value="nes">Editer</ion-select-option>
-                    <ion-select-option value="n64">Supprimer</ion-select-option>
-                </ion-select>
-            </ion-item>
+            <ListMember lastname="NOM" firstname="Prénom" />
+            <ListMember lastname="NOM" firstname="Prénom" />
+            <ListMember lastname="NOM" firstname="Prénom" />
+            <ion-label id="labelLink"><a href="" style="color: red;">Voir plus</a></ion-label>
         </ion-list>
 
         <!--Group List-->
         <ion-list>
             <ion-label id="labelList">Liste des groupes</ion-label>
-            <ion-item>
-                <ion-label>Nom du groupe</ion-label>
-                <ion-select>
-                    <ion-select-option value="">Voir les membres du groupe</ion-select-option>
-                    <ion-select-option value="nes">Editer</ion-select-option>
-                    <ion-select-option value="n64">Supprimer</ion-select-option>
-                </ion-select>
-            </ion-item>
+            <ListGroup groupname="Nom du groupe" />
+            <ListGroup groupname="Nom du groupe" />
+            <ion-label id="labelLink"><a href="" style="color: red;">Voir plus</a></ion-label>
         </ion-list>
 
         <!--Meeting List-->
         <ion-list>
             <ion-label id="labelList">Réunions</ion-label>
-            <ion-item>
-                <ion-label>NOM Prénom</ion-label>
-                <ion-select>
-                    <ion-select-option value="">Voir</ion-select-option>
-                    <ion-select-option value="nes">Editer</ion-select-option>
-                    <ion-select-option value="n64">Supprimer</ion-select-option>
-                </ion-select>
-            </ion-item>
+            <ListReunion meeting="Nom de la réunion"/>
+            <ion-label id="labelLink"><a href="" style="color: red;">Voir plus</a></ion-label>
         </ion-list>
 
         <!--Analyse des données-->
         <ion-list>
             <ion-label id="labelList">Analyse des données</ion-label>
-            <ion-item>
-                <ion-label>Nombre de membres</ion-label>
-                <ion-badge style="color: white; background-color: red;">00</ion-badge>
-            </ion-item>
-            <ion-item>
-                <ion-label>Nombre de groupes</ion-label>
-                <ion-badge style="color: white; background-color: red;">00</ion-badge>
-            </ion-item>
-            <ion-item>
-                <ion-label>Nombre de réunions</ion-label>
-                <ion-badge style="color: white; background-color: red;">00</ion-badge>
-            </ion-item>
+            <DataAnalyze :number="0" numberOf="Nombre de membres" />
+            <DataAnalyze :number="0" numberOf="Nombre de groupes" />
+            <DataAnalyze :number="0" numberOf="Nombre de réunions" />
         </ion-list>
+
     </ion-content>
 </ion-page>
 </template>
 
 <script lang="ts" setup>
-import { IonSelect, IonSelectOption, IonList, IonMenu, IonMenuButton, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonButtons, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon,  } from '@ionic/vue';
-import { chevronBackOutline, chevronForwardOutline } from 'ionicons/icons';
+import { IonList, IonMenu, IonMenuButton, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonButtons, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon,  } from '@ionic/vue';
+import { chevronBackOutline, chevronForwardOutline, } from 'ionicons/icons';
 import FicheAdmin from '@/components/FicheAdmin.vue';
+import ListMember from '@/components/admin/components/ListMember.vue';
+import ListGroup from '@/components/admin/components/ListGroup.vue';
+import ListReunion from '@/components/admin/components/ListReunion.vue';
+import DataAnalyze from '@/components/admin/components/DataAnalyze.vue';
 </script>
 
 <style scoped>
@@ -142,6 +124,14 @@ ion-content ion-list {
     margin-top: 20px;
 }
 ion-content ion-list ion-label#labelList {
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #3a3a3a;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+ion-content ion-list ion-label#labelLink {
     font-size: 0.9em;
     color: #3a3a3a;
     padding-left: 20px;
