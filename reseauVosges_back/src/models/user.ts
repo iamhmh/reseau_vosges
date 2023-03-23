@@ -99,4 +99,8 @@ export class User extends Model<User> {
 
     @HasMany(() => Recommendations)
     recommendations?: Recommendations[];
+
+    @ForeignKey(() => Group)
+    @Column
+    groupid?: string;
 }
