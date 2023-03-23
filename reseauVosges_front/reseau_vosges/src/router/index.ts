@@ -125,11 +125,52 @@ const routes: Array<RouteRecordRaw> = [
       },
     ]
   },
-  
   {
     path: '/login',
     component: () => import('@/views/ConnexionPage.vue')
-  }
+  },
+  {
+    path: '/admin',
+    component: () => import('@/views/AdminDashboardPage.vue'),
+    children : [
+      {
+        path: 'addmember',
+        component: () => import('@/components/admin/member/AddMemberPage.vue')
+      },
+      {
+        path: 'editmember',
+        component: () => import('@/components/admin/member/EditMemberPage.vue')
+      },
+      {
+        path: 'deletemember',
+        component: () => import('@/components/admin/member/DeleteMemberPage.vue')
+      },
+      {
+        path: 'creategroup',
+        component: () => import('@/components/admin/group/CreateGroupPage.vue')
+      },
+      {
+        path: 'editgroup',
+        component: () => import('@/components/admin/group/EditGroupPage.vue')
+      },
+      {
+        path: 'addmembergroup',
+        component: () => import('@/components/admin/group/AddMemberGroupPage.vue')
+      },
+      {
+        path: 'deletemembergroup',
+        component: () => import('@/components/admin/group/DeleteMemberGroupPage.vue')
+      },
+      {
+        path: 'createmeeting',
+        component: () => import('@/components/admin/meeting/CreateMeetingPage.vue')
+      },
+      {
+        path: 'editmeeting',
+        component: () => import('@/components/admin/meeting/EditMeetingPage.vue')
+      },
+    ]
+  },
 ]
 
 const router = createRouter({
