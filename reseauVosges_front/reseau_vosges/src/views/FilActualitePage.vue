@@ -1,50 +1,48 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense" style="position: sticky;">
-        <ion-toolbar>
-            <ion-buttons slot="start">
-              <ion-button>
-                <a href="/tabs/home"><ion-icon aria-hidden="true" :icon="chevronBackOutline" style="color: red;"/></a>
-              </ion-button>
-            </ion-buttons>
-          <ion-title>FIL D'ACTUALITÉS</ion-title>
+      <ion-header class="sticky top-0 z-10" collapse="condense">
+        <ion-toolbar class="bg-white">
+          <ion-buttons slot="start">
+            <ion-button>
+              <a href="/tabs/home">
+                <ion-icon aria-hidden="true" :icon="chevronBackOutline" class="text-red-500" />
+              </a>
+            </ion-button>
+          </ion-buttons>
+          <ion-title class="text-gray-800">FIL D'ACTUALITÉS</ion-title>
         </ion-toolbar>
-        <ion-grid style="padding: 0;">
-          <ion-row>
-            <ion-segment value="custom">
-              <ion-segment-button value="donnes">
-                <ion-label>DONNÉS</ion-label>
-              </ion-segment-button>
-              <ion-segment-button value="recus">
-                <ion-label>RECUS</ion-label>
-              </ion-segment-button>
-              <ion-segment-button value="options" id="open-custom-dialog">
-                <ion-label><ion-icon slot="start" :icon="optionsOutline"></ion-icon></ion-label>
-              </ion-segment-button>
-            </ion-segment>
-          </ion-row>
-        </ion-grid>
+        <ion-grid class="p-0">
+            <ion-row>
+              <ion-segment value="custom">
+                <ion-segment-button value="donnes" class="md:text-base md:border-0 md:border-transparent md:py-2 md:mx-2">DONNÉS</ion-segment-button>
+                <ion-segment-button value="recus" class="md:text-base md:border-0 md:border-transparent md:py-2 md:mx-2">RECUS</ion-segment-button>
+                <ion-segment-button value="options" id="open-custom-dialog" class="md:border-0 md:border-transparent md:py-2 md:mx-2">
+                  <ion-label><ion-icon slot="start" :icon="optionsOutline" class="w-5 h-5"></ion-icon></ion-label>
+                </ion-segment-button>
+              </ion-segment>
+            </ion-row>
+          </ion-grid>
       </ion-header>
 
       <ion-modal id="example-modal" ref="modal" trigger="open-custom-dialog">
         <ion-list lines="none">
-          <ion-item :button="true" :detail="false" @click="dismiss()">
-            <ion-icon :icon="personCircle"></ion-icon>
-            <ion-label>MPB</ion-label>
+          <ion-item :button="true" :detail="false" @click="dismiss()" class="bg-red-500">
+            <ion-icon :icon="personCircle" class="w-6 h-6 mr-2"></ion-icon>
+            <ion-label class="text-white">MPB</ion-label>
           </ion-item>
-          <ion-item :button="true" :detail="false" @click="dismiss()">
-            <ion-icon :icon="personCircle"></ion-icon>
-            <ion-label>Recommandations</ion-label>
+          <ion-item :button="true" :detail="false" @click="dismiss()" class="bg-red-500">
+            <ion-icon :icon="personCircle" class="w-6 h-6 mr-2"></ion-icon>
+            <ion-label class="text-white">Recommandations</ion-label>
           </ion-item>
-          <ion-item :button="true" :detail="false" @click="dismiss()">
-            <ion-icon :icon="personCircle"></ion-icon>
-            <ion-label>Tête-à-tête</ion-label>
+          <ion-item :button="true" :detail="false" @click="dismiss()" class="bg-red-500">
+            <ion-icon :icon="personCircle" class="w-6 h-6 mr-2"></ion-icon>
+            <ion-label class="text-white">Tête-à-tête</ion-label>
           </ion-item>
         </ion-list>
       </ion-modal>
       
-      <ListActualite url="#" date="Mars 16 2023" name="Aurélien MILLOTTE" amount="€960" :icon1="Reco" :icon2="chevronForwardOutline" color="red"/>
+      <ListActualite url="#" date="Mars 16 2023" name="Aurélien MILLOTTE" amount="€960" :icon1="personCircle" :icon2="chevronForwardOutline" color="red"/>
 
       <BoutonFabMulti/>
 
@@ -56,7 +54,6 @@
 
 import { IonModal, IonList, IonButtons, IonItem, IonLabel, IonSegment, IonSegmentButton, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonButton, IonIcon,  } from '@ionic/vue';
 import { chevronBackOutline, optionsOutline, chevronForwardOutline, personCircle, } from 'ionicons/icons';
-import Reco from '@/assets/images/icon/recommandation.png';
 import BoutonFabMulti from '@/components/home/tools/boutons/BoutonFabMulti.vue';
 import ListActualite from '@/components/home/tools/list/ListActualite.vue';
 
@@ -75,30 +72,6 @@ ion-segment-button.ios {
   --color: red;
   --color-checked: #fff;
   --border-radius: 20px;
-}
-ion-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.header-collapse-condense ion-toolbar {
-  --background: #f6f4f4;
-}
-ion-title {
-  text-align: center;
-  color: #3a3a3a;
-}
-.header-collapse-condense ion-toolbar:first-of-type {
-  padding-top: 0px;
-}
-ion-button {
-  --background: #f4f4f4;
-  --color: #3a3a3a;
-  margin: 0;
-}
-ion-fab-list ion-fab-button {
-  width: 60px;
-  height: 60px;
 }
 ion-modal#example-modal {
     --min-width: 250px;
