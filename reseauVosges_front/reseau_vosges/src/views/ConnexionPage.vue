@@ -9,14 +9,14 @@
             <ion-list>
                 <ion-item>
                     <ion-label position="floating">Identifiant</ion-label>
-                    <ion-input type="email" required></ion-input>
+                    <ion-input v-model="creds.email" type="email" required></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="floating">Mot de passe</ion-label>
-                    <ion-input type="password" required></ion-input>
+                    <ion-input v-model="creds.password" type="password" required></ion-input>
                 </ion-item>
             </ion-list>
-            <ion-button expand="block" color="danger">Connexion</ion-button>
+            <ion-button @click="login" expand="block" color="danger" :loading="loading">Connexion</ion-button>
             <a href="">Mot de passe oublié ?</a>
         </ion-content>
     </ion-page>
@@ -24,6 +24,29 @@
 
 <script lang="ts" setup>
 import { IonPage, IonHeader, IonContent, IonList, IonItem, IonLabel, IonInput, IonButton, IonThumbnail } from '@ionic/vue';
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+
+const store = useStore();
+const router = useRouter();
+const creds = ref({ email: "", password: "" });
+
+const loading = ref(false);
+
+const login = async () => {
+    loading.value = true;
+    await store
+        .dispatch("login", creds.value)
+        .then(async () => {
+            await router.push("/");
+        })
+        .finally(() => {
+            loading.value = false;
+        });
+};
+
+
 </script>
 
 <style>

@@ -10,7 +10,7 @@
             </ion-col>
             <ion-col size="8" size-sm="3">
                 <a href="/tabs/userprofile" style="text-decoration: none;">
-                    <h6><strong>Loic LETANG</strong></h6>
+                    <h6><strong>{{ data.firstname }} {{ data.lastname }}</strong></h6>
                     <p id="text">88-03 BNI REMIREMONT Porte des Hautes Vosges</p>
                     <p id="renouvellement">Renouvellement en cours</p>
                     <p id="renouvellement">Date de renouvellement: 01/03/2024</p>
@@ -23,9 +23,33 @@
     </ion-grid>
 </template>
   
-<script setup lang="ts">
+<script lang="ts" setup>
 import { IonCol, IonGrid, IonRow, IonAvatar, IonIcon } from '@ionic/vue';
 import { chevronForwardOutline } from 'ionicons/icons';
+import { IUser } from "@/shared/interfaces";
+
+const data: IUser = {
+    id: "1",
+    role: "super_admin",
+    firstname: "JOHN",
+    lastname: "DOE",
+    username: "string",
+    email: "string",
+    password: "string",
+    phone_number: "string",
+    address: "string",
+    city: "string",
+    zip_code: 88000,
+    compagny_name: "string",
+    compagny_domain: "string",
+    website_url: "string",
+    business_description: "string",
+    business_activity: "string",
+    avatar: "string",
+    compagny_logo: "string",
+};
+
+
 </script>
   
 <style>

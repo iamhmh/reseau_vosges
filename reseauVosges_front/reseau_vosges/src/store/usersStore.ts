@@ -4,69 +4,72 @@ import { errorToast } from "@/shared/toast";
 
 export interface IUser {
   id: string;
-  role: "super_admin" | "bureau_admin" | "membre" | "user";
   firstname: string;
-  lastname: string;
-  username: string;
+  name: string;
   email: string;
-  password: string;
-  phone_number: string;
-  address: string;
-  city: string;
-  zip_code: number;
-  compagny_name: string;
-  compagny_domain: string;
-  website_url: string;
-  business_description: string;
-  business_activity: string;
-  avatar: string;
-  compagny_logo: string;
+  role?: any;
+  password?: string;
+  confirmPassword?: string;
 }
 
-export interface IUsersState {
-  users: IUser[];
+interface IUserState {
+  token: string;
+  user: IUser;
 }
 
-export const state: IUsersState = {
-  users: [],
-};
-
-export const getters = {
-  users: (state: IUsersState) => state.users,
-};
-
-export const mutations = {
-  setUsers(state: IUsersState, users: IUser[]) {
-    state.users = users;
-  }
-};
-
-export const actions = {
-  async fetchUsers(context: ActionContext<IUsersState, IState>) {
-    try {
-      const response = await axiosInstance.get("/users");
-      context.commit("setUsers", response.data);
-    } catch (e: any) {
-      console.log(e);
-      switch (e.status) {
-        case 404:
-          errorToast("Ce compte n'existe pas");
-          break;
-        case 422:
-          errorToast("Paramètres invalide");
-          break;
-        case 403:
-          errorToast("Mot de passe invalide");
+export const usersStore = {
+  state: {
+    token: localStorage.getItem("token"),
+    user: null,
+  },
+  getters: {
+    loggedIn: (state: IUserState) => state.token !== null,
+    user: (state: IUserState) => state.user,
+  },
+  mutations: {
+    SET_TOKEN(state: IUserState, token: string) {
+      state.token = token;
+      localStorage.setItem("token", token);
+    },
+    SET_USER(state: IUserState, user: IUser) {
+      state.user = user;
+    },
+    LOGOUT(state: IState) {
+      localStorage.removeItem("token");
+      state.user = null;
+      state.token = null;
+      window.location.reload();
+    },
+  },
+  actions: {
+    async login(context: ActionContext<IUserState, IState>, payload: any) {
+      try {
+        const result: any = await axiosInstance.post("/login", payload);
+        context.commit("SET_TOKEN", result.token);
+        context.commit("SET_USER", result.user);
+      } catch (e: any) {
+        console.log(e);
+        switch (e.status) {
+          case 404:
+            errorToast("Ce compte n'existe pas");
+            break;
+          case 422:
+            errorToast("Paramètres invalide");
+            break;
+          case 403:
+            errorToast("Mot de passe invalide");
+        }
+        throw e;
       }
-      throw e;
-    }
-
-  }
+    },
+    async getUser({ commit }: any) {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const user = await axiosInstance.get(`/token`);
+        commit("SET_USER", user);
+      }
+    },
+  },
 };
 
-export default {
-  state,
-  getters,
-  mutations,
-  actions
-};
+

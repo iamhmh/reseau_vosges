@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router';
+import { router }  from "@/router";
+import { store } from "@/store/store";
+import "./index.css";
+import Toast from "vue-toastification";
 
 import { IonicVue } from '@ionic/vue';
 
@@ -26,9 +29,9 @@ import './theme/variables.css';
 import './assets/css/tailwind.css';
 
 const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
-  
-router.isReady().then(() => {
-  app.mount('#app');
-});
+app.use(router);
+app.use(store);
+app.use(Toast);
+app.use(IonicVue);
+
+app.mount("#app");

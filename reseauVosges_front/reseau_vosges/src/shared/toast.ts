@@ -9,4 +9,3 @@ export const successToast = (message: string) => {
 export const errorToast = (message: string) => {
     toaster.error(message);
 };
-

@@ -23,6 +23,8 @@ import FicheUser from '@/components/FicheUser.vue';
 import ProchaineReunion from '@/components/ProchaineReunion.vue';
 import BonAAnnoncer from '@/components/BonAAnnoncer.vue';
 import HistoriqueUser from '@/components/HistoriqueUser.vue';
+
+
 </script>
 
 <style>
