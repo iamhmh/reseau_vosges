@@ -1,6 +1,6 @@
 <template>
     <ion-toolbar>
-        <ion-title>{{ props.title }}</ion-title>
+        <ion-title class="text-center text-gray-700">{{ props.title }}</ion-title>
     </ion-toolbar>
 </template>
 

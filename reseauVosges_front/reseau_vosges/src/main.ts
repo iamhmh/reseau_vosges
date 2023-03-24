@@ -1,11 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import { router }  from "@/router";
+import { createApp } from 'vue';
+import App from './App.vue';
+import router   from "@/router";
 import { store } from "@/store/store";
 import "./index.css";
 import Toast from "vue-toastification";
-
 import { IonicVue } from '@ionic/vue';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -28,10 +28,15 @@ import './theme/variables.css';
 
 import './assets/css/tailwind.css';
 
-const app = createApp(App)
+const app = createApp(App);
+
 app.use(router);
 app.use(store);
 app.use(Toast);
 app.use(IonicVue);
 
-app.mount("#app");
+
+
+router.isReady().then(() => {
+    app.mount('#app');
+});

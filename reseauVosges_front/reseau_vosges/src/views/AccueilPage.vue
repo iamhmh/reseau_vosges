@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
+      <ion-header class="bg-gray-100 fixed border-b border-gray-300">
         <PageTitle title="ACCUEIL" />
         <FicheUser/>
       </ion-header>
@@ -28,21 +28,10 @@ import HistoriqueUser from '@/components/HistoriqueUser.vue';
 </script>
 
 <style>
-.header-collapse-condense ion-toolbar {
+.ion-toolbar[collapse="condense"] {
   --background: #f4f4f4;
 }
-ion-header {
-    background: #f4f4f4;
-    position: fixed;
-    border-bottom: 1px solid #cacaca;
-}
-ion-title {
-  text-align: center;
-  color: #3a3a3a;
-}
 ion-button {
-  text-align: center;
-  color: #3a3a3a;
-  font-size: 1em;
+  /*text-center text-gray-700 text-base;*/
 }
 </style>

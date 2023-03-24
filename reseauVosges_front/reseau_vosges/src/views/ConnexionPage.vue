@@ -24,6 +24,7 @@
 
 <script lang="ts" setup>
 import { IonPage, IonHeader, IonContent, IonList, IonItem, IonLabel, IonInput, IonButton, IonThumbnail } from '@ionic/vue';
+
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
@@ -36,16 +37,15 @@ const loading = ref(false);
 
 const login = async () => {
     loading.value = true;
-    await store
-        .dispatch("login", creds.value)
-        .then(async () => {
-            await router.push("/");
-        })
-        .finally(() => {
-            loading.value = false;
-        });
+    try {
+        await store.dispatch("login", creds.value);
+        router.push("/");
+    } catch (error) {
+        console.log(error);
+    } finally {
+        loading.value = false;
+    }
 };
-
 
 </script>
 

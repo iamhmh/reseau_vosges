@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
-import { store } from "@/store/store";
+import { store } from '@/store/store';
 import TabsPage from '../views/TabsPage.vue';
 
-export const router = createRouter({
-  history: createWebHistory(),
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -134,7 +134,7 @@ export const router = createRouter({
     {
       path: '/admin',
       component: () => import('@/views/AdminDashboardPage.vue'),
-      children : [
+      children: [
         {
           path: 'addmember',
           component: () => import('@/components/admin/member/AddMemberPage.vue')
@@ -177,17 +177,17 @@ export const router = createRouter({
 })
 
 router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  if (to.path !== "/login") {
-    if (!store.getters.loggedIn) {
-      next("/login");
-    } else {
-      next();
-    }
+  const isLoggedIn = store.getters.loggedIn;
+  const isLoginPage = to.path === "/login";
+
+  if (isLoginPage && isLoggedIn) {
+    next("/");
+  } else if (!isLoginPage && !isLoggedIn) {
+    next("/login");
   } else {
-    if (store.getters.loggedIn) {
-      next("/");
-    } else {
-      next();
-    }
+    next();
   }
+  
 });
+
+export default router;
