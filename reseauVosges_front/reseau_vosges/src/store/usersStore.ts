@@ -5,6 +5,7 @@ import { errorToast } from "@/shared/toast";
 export interface IUser {
   id: string;
   firstname: string;
+  lastname: string;
   name: string;
   email: string;
   role?: any;
@@ -44,7 +45,7 @@ export const usersStore = {
   actions: {
     async login(context: ActionContext<IUserState, IState>, payload: any) {
       try {
-        const result: any = await axiosInstance.post("/login", payload);
+        const result: any = await axiosInstance.post("/", payload);
         context.commit("SET_TOKEN", result.token);
         context.commit("SET_USER", result.user);
       } catch (e: any) {

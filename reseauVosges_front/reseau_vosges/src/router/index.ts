@@ -1,12 +1,13 @@
-import { createRouter, createWebHistory, NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
-import { store } from '@/store/store';
+import { createRouter, createWebHistory, } from '@ionic/vue-router';
+//import { store } from '@/store/store';
 import TabsPage from '../views/TabsPage.vue';
+//import {NavigationGuardNext, RouteLocationNormalized} from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '',
       redirect: '/tabs/home'
     },
     {
@@ -175,7 +176,7 @@ const router = createRouter({
     },
   ]
 })
-
+/*
 router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const isLoggedIn = store.getters.loggedIn;
   const isLoginPage = to.path === "/login";
@@ -189,5 +190,6 @@ router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, n
   }
   
 });
-
+*/
+//console.log("router", router)
 export default router;

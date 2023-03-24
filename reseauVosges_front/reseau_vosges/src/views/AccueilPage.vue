@@ -31,7 +31,4 @@ import HistoriqueUser from '@/components/HistoriqueUser.vue';
 .ion-toolbar[collapse="condense"] {
   --background: #f4f4f4;
 }
-ion-button {
-  /*text-center text-gray-700 text-base;*/
-}
 </style>

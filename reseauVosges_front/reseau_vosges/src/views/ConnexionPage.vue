@@ -39,7 +39,7 @@ const login = async () => {
     loading.value = true;
     try {
         await store.dispatch("login", creds.value);
-        router.push("/");
+        router.push("/login");
     } catch (error) {
         console.log(error);
     } finally {
